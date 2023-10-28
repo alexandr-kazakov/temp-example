@@ -1,0 +1,210 @@
+// begin Product-card-large
+.product-card-large {
+  &__mobile-close-btn {
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #e9e9e9;
+    color: $darkGrey;
+    cursor: pointer;
+    display: none;
+    letter-spacing: 0.8px;
+    padding: 15px 15px 15px 37px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:before {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMS4yODIiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDExLjI4MiA3Ij4KICAgIDxwYXRoIGQ9Ik0xMC43OTQgMy4wMTJIMS42NjdMMy44NDUuODM0YS40ODkuNDg5IDAgMCAwLS42OTEtLjY5MUwuMTQzIDMuMTU1YS40ODguNDg4IDAgMCAwIDAgLjY5MWwzLjAxMSAzLjAxMmEuNDg5LjQ4OSAwIDAgMCAuNjkxLS42OTFMMS42NjcgMy45ODZoOS4xMjdhLjQ4OS40ODkgMCAxIDAgMC0uOTc3eiIgZGF0YS1uYW1lPSJQYXRoIDE1MCIvPgo8L3N2Zz4K);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      content: '';
+      height: 8px;
+      left: 15px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+    }
+
+    @include media('<sm') {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: flex;
+    @include media('<lg') {
+      flex-direction: column;
+    }
+  }
+
+  &__left {
+    flex-shrink: 0;
+    min-height: 620px;
+    position: relative;
+    width: 445px;
+
+    @include media('<xl') {
+      width: 400px;
+    }
+    @include media('<lg') {
+      min-height: 0;
+      width: 100%;
+    }
+  }
+
+  &__image {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    @include media('<lg') {
+      display: none;
+      height: auto;
+      position: static;
+      width: 100%;
+    }
+
+    &_mobile {
+      display: none;
+      @include media('<lg') {
+        display: block;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 30px 30px;
+    width: 100%;
+
+    @include media('<xl') {
+      padding: 40px 20px 20px 20px;
+    }
+
+    @include media('<lg') {
+      padding: 30px 15px 20px 15px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 25px;
+
+    @include media('<xl') {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__header-top {
+    display: flex;
+  }
+
+  &__title {
+    align-self: center;
+    font-size: 2.2rem;
+    font-weight: 500;
+    flex: 0 0 70%;
+    letter-spacing: 1px;
+    max-width: 70%;
+    margin: 0;
+
+    @include media('<xl') {
+      font-size: 1.8rem;
+      flex: 0 0 65%;
+      max-width: 65%;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__weight {
+    color: $darkGrey;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+  }
+
+  &__price {
+    color: $darkGrey;
+    font-size: 2.8rem;
+    font-weight: 500;
+    flex: 0 0 30%;
+    letter-spacing: 0.7px;
+    max-width: 30%;
+    padding-left: 15px;
+    text-align: right;
+    white-space: nowrap;
+
+    @include media('<xl') {
+      flex: 0 0 35%;
+      max-width: 35%;
+    }
+    @include media('<md') {
+      font-size: 1.8rem;
+      letter-spacing: 0.6px;
+    }
+  }
+
+  &__currency {
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+
+  &__descr {
+    p {
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      line-height: 1.5;
+      margin: 0 0 15px 0;
+    }
+  }
+
+  &__title-section {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    margin: 0 0 18px 0;
+
+    @include media('<xl') {
+      margin: 0 0 15px 0;
+    }
+  }
+
+  &__footer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    @include media('<md') {
+      align-items: flex-start;
+      border-top: 1px solid #e9e9e9;
+      flex-direction: column;
+      justify-content: normal;
+      padding-top: 10px;
+    }
+  }
+
+  &__total {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    margin: 0;
+    padding-right: 30px;
+
+    @include media('<md') {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-right: 0;
+      width: 100%;
+    }
+  }
+}
+// end Product-card-large

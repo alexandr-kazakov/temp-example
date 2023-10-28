@@ -1,0 +1,86 @@
+// begin Header
+.header {
+  align-items: center;
+  background-color: $gray;
+  border-bottom: 1px solid transparent;
+  display: flex;
+  height: 100px;
+  left: 0;
+  position: fixed;
+  padding: 5px 0;
+  top: 0;
+  transition: background-color 0.3s;
+  width: 100%;
+  z-index: 10;
+
+  @include media('<xl') {
+    height: 80px;
+  }
+
+  @include media('<lg') {
+    height: 70px;
+  }
+
+  @include media('<md') {
+    background-color: #fff;
+    border-bottom-color: #e9e9e9;
+    height: 56px;
+    position: relative;
+    &_theme_white {
+      border-bottom-color: transparent;
+      position: absolute;
+    }
+  }
+
+  &__content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    @include media('<md') {
+      justify-content: center;
+    }
+  }
+
+  &__left,
+  &__right {
+    align-items: center;
+    display: flex;
+  }
+
+  &__user {
+    align-items: center;
+    display: flex;
+    margin-right: 25px;
+
+    @include media('<lg') {
+      margin-right: 20px;
+    }
+
+    @include media('<md') {
+      display: none;
+    }
+  }
+
+  &__user-image {
+    border-radius: 50%;
+    height: auto;
+    width: 50px;
+
+    @include media('<lg') {
+      width: 40px;
+    }
+  }
+
+  &_theme_white {
+    background-color: transparent;
+  }
+
+  .modal-open & {
+    padding-right: 17px;
+  }
+
+  &.scroll-active {
+    background-color: $black;
+  }
+}
+// end Header

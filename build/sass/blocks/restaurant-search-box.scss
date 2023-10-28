@@ -1,0 +1,96 @@
+// begin Restaurant Search box
+.restaurant-search-box {
+  &__title {
+    margin: 0 0 18px 0;
+    @include media('<lg') {
+      font-size: 6rem;
+    }
+    @include media('<md') {
+      font-size: 4.6rem;
+      margin: 0 0 10px 0;
+    }
+    @include media('<xs') {
+      font-size: 3.8rem;
+    }
+  }
+  &__subtitle {
+    color: $black;
+    letter-spacing: 0.5px;
+    margin: 0 auto 56px auto;
+
+    .restaurant-search-box_parent_search-restaurants & {
+      font-size: 1.5rem;
+      margin-bottom: 45px;
+    }
+
+    @include media('<lg') {
+      .restaurant-search-box_parent_search-restaurants & {
+        margin-bottom: 35px;
+      }
+    }
+
+    @include media('<md') {
+      font-size: 13px;
+      letter-spacing: 0.2px;
+      max-width: 320px;
+      margin: 0 auto 25px auto;
+
+      .restaurant-search-box_parent_search-restaurants & {
+        font-size: 13px;
+        margin-bottom: 25px;
+      }
+    }
+
+    @include media('<xs') {
+      margin: 0 auto 50px auto;
+      max-width: 280px;
+      .restaurant-search-box_parent_search-restaurants & {
+        max-width: 240px;
+      }
+    }
+  }
+
+  &_parent_welcome {
+    width: 100%;
+    @include media('<md') {
+      margin-bottom: 25px;
+      position: static;
+      transform: none;
+    }
+  }
+
+  &_parent_search-restaurants {
+    max-width: 375px;
+    margin: 0 auto;
+
+    @include media('<lg') {
+      max-width: 340px;
+    }
+
+    @include media('<md') {
+      max-width: 270px;
+    }
+
+    // @include media('<sm') {
+    //   max-width: 280px;
+    // }
+
+    @include media('<xs') {
+      max-width: 265px;
+    }
+  }
+
+  &_theme_white {
+    .restaurant-search-box__title {
+      color: #ffffff;
+    }
+    .restaurant-search-box__subtitle {
+      color: #ffffff;
+    }
+  }
+
+  &_margin_b_xxl-3 {
+    margin-bottom: 270px;
+  }
+}
+// end Restaurant Search box

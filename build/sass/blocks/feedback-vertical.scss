@@ -1,0 +1,46 @@
+// begin Feedback-vertical
+.feedback-vertical {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  &__image {
+    height: auto;
+    max-width: 120px;
+    margin-bottom: 28px;
+    width: 100%;
+    @include media('<lg') {
+      margin-bottom: 20px;
+    }
+  }
+  &__title {
+    color: #494949;
+    font-size: 1.8rem;
+    letter-spacing: 0.6px;
+    margin: 0 0 30px 0;
+    @include media('<lg') {
+      margin-bottom: 15px;
+    }
+  }
+  &__descr {
+    color: #494949;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 0 60px 0;
+    @include media('<lg') {
+      margin-bottom: 30px;
+    }
+  }
+
+  &_nav {
+    display: flex;
+  }
+
+  &_margin_b_lg {
+    margin-bottom: 50px;
+  }
+}
+// end Feedback-vertical

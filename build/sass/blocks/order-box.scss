@@ -1,0 +1,140 @@
+// begin Order-box
+.order-box {
+  background-color: $gray;
+  padding: 20px;
+
+  @include media('<lg') {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  @include media('<sm') {
+    padding: 5px;
+  }
+
+  &__top {
+    align-items: flex-start;
+    display: flex;
+    padding-bottom: 15px;
+  }
+
+  &__top-left {
+    flex: 0 0 80%;
+    max-width: 80%;
+
+    @include media('<lg') {
+      flex: 0 0 70%;
+      max-width: 70%;
+    }
+  }
+
+  &__top-right {
+    display: flex;
+    flex: 0 0 20%;
+    justify-content: flex-end;
+    max-width: 20%;
+
+    @include media('<lg') {
+      flex: 0 0 30%;
+      max-width: 30%;
+    }
+  }
+
+  &__data {
+    @include reset-list;
+  }
+
+  &__data-item {
+    margin-bottom: 5px;
+
+    &_address {
+      display: flex;
+    }
+  }
+
+  &__address-title {
+    margin-right: 5px;
+    white-space: nowrap;
+  }
+
+  &__address-text {
+    font-size: 12px;
+    max-width: 350px;
+
+    @include media('<lg') {
+      font-size: 10px;
+      max-width: 180px;
+    }
+  }
+
+  &__status {
+    display: inline-block;
+    line-height: 1;
+    padding-left: 20px;
+    position: relative;
+
+    &::before {
+      border-radius: 50%;
+      content: '';
+      height: 12px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+    }
+
+    &_success:before {
+      background-color: $success;
+    }
+    &_warning:before {
+      background-color: $warning;
+    }
+    &_danger:before {
+      background-color: $danger;
+    }
+  }
+
+  &__second {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__restaurant {
+    align-items: center;
+    display: flex;
+  }
+
+  &__restaurant-link {
+    display: block;
+    margin-left: 5px;
+  }
+
+  &__restaurant-img {
+    height: 44px;
+    width: auto;
+  }
+
+  &__toggler {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:before {
+      content: 'Свернуть заказ <<';
+      color: #aeaeae;
+    }
+
+    &.collapsed {
+      &:before {
+        content: 'Поcмотреть заказ >>';
+      }
+    }
+  }
+}
+// end Order-box

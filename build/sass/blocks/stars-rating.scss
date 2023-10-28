@@ -1,0 +1,55 @@
+// begin Stars-rating
+.stars-rating {
+  &__icon {
+    fill: #e2e2e3;
+    height: 12px;
+    width: 12px;
+
+    &.active {
+      fill: #fd9533;
+    }
+
+    &:not(:last-child) {
+      margin-right: 3px;
+    }
+
+    .stars-rating_lg & {
+      height: 16px;
+      width: 16px;
+    }
+
+    @include media('<lg') {
+      .stars-rating_parent_topline-restaurant-box & {
+        height: 12px;
+        width: 12px;
+      }
+    }
+
+    @include media('<md') {
+      .stars-rating_lg & {
+        height: 12px;
+        width: 12px;
+      }
+    }
+
+    @include media('<sm') {
+      .stars-rating_parent_topline-restaurant-box & {
+        height: 16px;
+        width: 16px;
+      }
+    }
+  }
+
+  &_margin_b_xs {
+    margin-bottom: 10px;
+  }
+
+  &_margin_r_md {
+    margin-right: 30px;
+  }
+
+  &_margin_r_xs {
+    margin-right: 10px;
+  }
+}
+// end Stars-rating

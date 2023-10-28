@@ -1,0 +1,34 @@
+// begin Order-box-footer
+.order-box-footer {
+  align-items: center;
+  background-color: $gray;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+
+  @include media('<lg') {
+    padding: 10px;
+  }
+
+  @include media('<sm') {
+    flex-direction: column;
+    justify-content: normal;
+  }
+
+  &__price {
+    font-size: 12px;
+
+    @include media('<sm') {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__price-value {
+    color: $black;
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    margin-left: 5px;
+  }
+}
+// end Order-box-footer

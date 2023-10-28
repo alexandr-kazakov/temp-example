@@ -1,0 +1,182 @@
+// begin Icon-left-box
+.icon-left-box {
+  display: inline-flex;
+  position: relative;
+
+  &__left {
+    margin-right: 20px;
+
+    .icon-left-box_parent_order-stages & {
+      margin-right: 28px;
+    }
+
+    .icon-left-box_vertical-icon & {
+      position: relative;
+
+      &:before {
+        bottom: -25px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzLjAwNCIgaGVpZ2h0PSI0OC4wOSIgdmlld0JveD0iMCAwIDMuMDA0IDQ4LjA5Ij4KICAgIDxkZWZzPgogICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgLmNscy0xe2ZpbGw6IzlmOWY5ZjtvcGFjaXR5Oi4yfQogICAgICAgIDwvc3R5bGU+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iUm9hZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMwLjM0OSAxNDAuMDMzKSI+CiAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV85OCIgd2lkdGg9IjMuMDAzIiBoZWlnaHQ9IjE2LjMyIiBjbGFzcz0iY2xzLTEiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDk4IiByeD0iMS41MDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwLjM0OSAtMTA4LjI2MikiLz4KICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzEwNyIgd2lkdGg9IjMuMDAzIiBoZWlnaHQ9IjUiIGNsYXNzPSJjbHMtMSIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgMTA3IiByeD0iMS41MDIiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMwLjM0OSAtMTE4LjI2MikiLz4KICAgICAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzk3IiB3aWR0aD0iMy4wMDMiIGhlaWdodD0iMTYuMzIiIGNsYXNzPSJjbHMtMSIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgOTciIHJ4PSIxLjUwMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAuMzQ5IC0xNDAuMDMyKSIvPgogICAgPC9nPgo8L3N2Zz4K);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        content: '';
+        height: 48px;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
+        width: 4px;
+
+        @include media('<lg') {
+          bottom: -15px;
+        }
+      }
+    }
+
+    .icon-left-box_parent_welcome & {
+      margin-right: 15px;
+    }
+  }
+
+  &__right {
+    .icon-left-box_parent_order-stages & {
+      padding-top: 15px;
+    }
+
+    @include media('<md') {
+      .icon-left-box_parent_login-modal & {
+        align-items: center;
+        display: flex;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    margin: 0 0 15px 0;
+  }
+
+  &__descr {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 1.47;
+    margin: 0;
+
+    @include media('<lg') {
+      .icon-left-box_parent_login-modal & {
+        font-size: 1.2rem;
+      }
+    }
+
+    @include media('<md') {
+      .icon-left-box_parent_login-modal & {
+        font-size: 1.5rem;
+        max-width: 270px;
+      }
+    }
+
+    .icon-left-box_parent_order-stages & {
+      min-height: 44px;
+      max-width: 230px;
+    }
+
+    .icon-left-box_parent_welcome & {
+      font-size: 12px;
+      line-height: 1.25;
+      letter-spacing: 0.4px;
+      max-width: 180px;
+    }
+  }
+
+  &_theme_white {
+    .icon-left-box__icon {
+      fill: #fff;
+    }
+
+    .icon-left-box__title {
+      color: #ffffff;
+    }
+    .icon-left-box__descr {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &_parent_welcome {
+    display: none;
+    @include media('<md') {
+      display: inline-flex;
+    }
+  }
+
+  &_parent_order-stages {
+    @include media('<lg') {
+      &.icon-left-box_margin_b_md {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &_parent_login-modal {
+    @include media('<md') {
+      justify-content: center;
+      width: 100%;
+    }
+
+    @include media('<sm') {
+      display: none;
+    }
+  }
+
+  &_horizontal-double-row {
+    justify-content: center;
+    padding: 0 20px 0 60px;
+
+    &:before,
+    &:after {
+      background-color: $primary;
+      content: '';
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+
+      @include media('<lg') {
+        display: none;
+      }
+    }
+    &:before {
+      left: 0;
+      @include media('<xl') {
+        left: -20px;
+      }
+    }
+    &:after {
+      right: 0;
+      @include media('<xl') {
+        right: -10px;
+      }
+    }
+
+    @include media('<xl') {
+      padding: 0 20px 0 40px;
+    }
+
+    @include media('<lg') {
+      padding: 0;
+    }
+  }
+
+  &_margin_b_md {
+    margin-bottom: 50px;
+  }
+  &_margin_b_sm {
+    margin-bottom: 30px;
+  }
+  &_margin_b_xs {
+    margin-bottom: 20px;
+  }
+}
+// end Icon-left-box

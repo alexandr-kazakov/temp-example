@@ -1,0 +1,16 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Оформление заказа'
+  - var pageDescription = 'Описание'
+  - var pageKeywords = 'Ключевые слова'
+  - var userState= 'logout'
+
+block content
+  +b.page-wrapper
+    +header({state: userState, theme: ""})(id="header")
+
+    include blocks/checkout-block 
+    
+
+    include blocks/footer 

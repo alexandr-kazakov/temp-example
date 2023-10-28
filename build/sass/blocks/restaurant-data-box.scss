@@ -1,0 +1,81 @@
+// begin Restaurant-data box
+.restaurant-data-box {
+  color: #aeaeae;
+  display: flex;
+  font-size: 13px;
+
+  @include media('<sm') {
+    &.restaurant-data-box_parent_topline-restaurant-box {
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__open {
+    margin-right: 15px;
+
+    @include media('<lg') {
+      .restaurant-data-box_parent_topline-restaurant-box & {
+        font-size: 12px;
+        margin-right: 10px;
+      }
+    }
+
+    @include media('<md') {
+      .restaurant-data-box_parent_topline-restaurant-box & {
+        display: none;
+      }
+    }
+  }
+
+  &__time,
+  &__price {
+    letter-spacing: 0.4px;
+    position: relative;
+    padding-left: 15px;
+
+    &:before {
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      content: '';
+      height: 10px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+    }
+
+    @include media('<lg') {
+      .restaurant-data-box_parent_topline-restaurant-box & {
+        font-size: 12px;
+      }
+    }
+  }
+
+  &__price {
+    margin-right: 15px;
+
+    &:before {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMCAxMCI+CiAgICA8ZyBpZD0iaWNvbl9kb25lIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOS44MTUgLTUuMTE1KSI+CiAgICAgICAgPGcgaWQ9Ikdyb3VwXzE3NyIgZGF0YS1uYW1lPSJHcm91cCAxNzciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkuODE1IDUuMTE2KSI+CiAgICAgICAgICAgIDxwYXRoIGlkPSJQYXRoXzE1NyIgZD0iTTEwNSAxMDBhNSA1IDAgMSAwIDUgNSA1IDUgMCAwIDAtNS01em0wIDkuMTUxYTQuMTUxIDQuMTUxIDAgMSAxIDQuMTUxLTQuMTUxIDQuMTU2IDQuMTU2IDAgMCAxLTQuMTUxIDQuMTUxeiIgZmlsbD0iI2FlYWVhZSIgZGF0YS1uYW1lPSJQYXRoIDE1NyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEwMCAtMTAwKSIvPgogICAgICAgICAgICA8cGF0aCBpZD0iUGF0aF8xNTkiIGQ9Ik0xOTEuMDcyIDIwMS4yMDlsLTEuODU3IDEuODQ3LS42LS42MDZhLjQyNS40MjUgMCAwIDAtLjYuNmwuOS45MDhhLjQyNS40MjUgMCAwIDAgLjMuMTI1LjQyMy40MjMgMCAwIDAgLjMtLjEyNWwyLjE1OS0yLjE0NWEuNDI1LjQyNSAwIDEgMC0uNi0uNnoiIGZpbGw9IiNhZWFlYWUiIGRhdGEtbmFtZT0iUGF0aCAxNTkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xODQuODQyIC0xOTcuNTg1KSIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==);
+    }
+
+    @include media('<lg') {
+      .restaurant-data-box_parent_topline-restaurant-box & {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__time {
+    &:before {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJjbG9jay1jaXJjdWxhci1vdXRsaW5lIiB2aWV3Qm94PSIwIDAgMTAgMTAiPgogICAgPGRlZnM+CiAgICAgICAgPHN0eWxlPgogICAgICAgICAgICAuY2xzLTF7ZmlsbDojYWVhZWFlfQogICAgICAgIDwvc3R5bGU+CiAgICA8L2RlZnM+CiAgICA8ZyBpZD0iR3JvdXBfMTc4IiBkYXRhLW5hbWU9Ikdyb3VwIDE3OCI+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMTYwIiBkPSJNNSAwYTUgNSAwIDEgMCA1IDUgNS4wMDYgNS4wMDYgMCAwIDAtNS01em0wIDguOTM2QTMuOTM2IDMuOTM2IDAgMSAxIDguOTM2IDUgMy45NDEgMy45NDEgMCAwIDEgNSA4LjkzNnoiIGNsYXNzPSJjbHMtMSIgZGF0YS1uYW1lPSJQYXRoIDE2MCIvPgogICAgICAgIDxwYXRoIGlkPSJQYXRoXzE2MSIgZD0iTTQ3LjEzNiAxOS45NDNoLTIuMjQ3di0yLjdhLjQxMi40MTIgMCAwIDAtLjgyMyAwdjMuMTEzYS40MTIuNDEyIDAgMCAwIC40MTIuNDEyaDIuNjU5YS40MTIuNDEyIDAgMSAwIDAtLjgyM3oiIGNsYXNzPSJjbHMtMSIgZGF0YS1uYW1lPSJQYXRoIDE2MSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTM5LjUzMSAtMTUuMDk4KSIvPgogICAgPC9nPgo8L3N2Zz4K);
+    }
+  }
+
+  &_sm {
+    font-size: 12px;
+  }
+}
+// end Restaurant-data box

@@ -1,0 +1,78 @@
+// begin Reviews-horizontal-box
+.reviews-horizontal-box {
+  border: 1px solid #e2e2e2;
+  padding: 15px 30px;
+
+  &__header {
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__image {
+    border-radius: 50%;
+    height: auto;
+    margin: 0 30px 0 0;
+    width: 50px;
+
+    @include media('<md') {
+      margin: 0 15px 0 0;
+    }
+  }
+
+  &__header-content {
+    flex: 1;
+  }
+
+  &__header-content-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    font-size: 1.6rem;
+    margin: 0 30px 10px 0;
+
+    .reviews-horizontal-box_parent_about-us-reviews & {
+      margin: 0 30px 0 0;
+    }
+
+    @include media('<md') {
+      margin: 0 30px 5px 0;
+    }
+  }
+
+  &__date {
+    color: #aeaeae;
+    font-size: 12px;
+  }
+
+  &__descr {
+    color: #aeaeae;
+    line-height: 1.5;
+    margin: 0;
+    padding-left: 80px;
+
+    @include media('<md') {
+      padding-left: 0;
+    }
+  }
+
+  @include media('<md') {
+    padding: 15px;
+  }
+
+  &_parent_restaurant-content-tabs,
+  &_parent_about-us-reviews {
+    margin-bottom: 30px;
+
+    @include media('<lg') {
+      margin-bottom: 10px;
+    }
+
+    @include media('<md') {
+      margin-bottom: 30px;
+    }
+  }
+}
+// end Reviews-horizontal-box

@@ -1,0 +1,8 @@
+mixin title-number-center-box(box) 
+  // begin Title-number-center-box
+  +b.title-number-center-box&attributes(attributes)
+    +e.H2.title
+      +e.SPAN.text= box.left
+      +e.number= box.number
+      +e.SPAN.text= box.right
+  // end Title-number-center-box

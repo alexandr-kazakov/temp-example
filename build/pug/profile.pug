@@ -1,0 +1,268 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Личный кабинет'
+  - var pageDescription = 'Описание'
+  - var pageKeywords = 'Ключевые слова'
+  - var userState= 'login'
+
+block content
+  +b.page-wrapper
+    +header({state: userState, theme: ""})(id="header")
+
+    +b.section._breadcrumbs
+      +e.container.container
+        +breadcrumbs("Главная", "Личный кабинет")
+
+    +b.SECTION.section._profile
+      +e.container.container    
+        +e.row.row
+          +e.col.col-xl-4.col-lg-4.col-md-5
+            // begin Topline-profile box
+            +b.topline-profile-box
+              +e.header
+                +e.header-top
+                  +e.IMG.user-image(src="img/content/user-1.jpg" alt="Пользователь")
+                  +e.UL.user-data
+                    +e.LI.user-data-item._name Евгений
+                    +e.LI.user-data-item +7 (999) 999-99-99
+                    +e.LI.user-data-item eugene.naumovich75@mail.ru
+                +e.header-second.show-mobile_md
+                  - var iconExit= '<svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 20 15.2"><g data-name="Group 107"><path d="M0 2.5v10.2a2.5 2.5 0 0 0 2.5 2.5h8.2a2.5 2.5 0 0 0 2.5-2.5V11a.5.5 0 0 0-1 0v1.7a1.5 1.5 0 0 1-1.5 1.5H2.5A1.5 1.5 0 0 1 1 12.7V2.5A1.5 1.5 0 0 1 2.5 1h8.2a1.5 1.5 0 0 1 1.6 1.5v1.7a.5.5 0 1 0 1 0V2.5A2.5 2.5 0 0 0 10.7 0H2.5A2.5 2.5 0 0 0 0 2.5z" data-name="Path 99"/><path d="M15.7 11.4a.5.5 0 0 0 .7 0L20 7.9a.5.5 0 0 0 0-.7l-3.5-3.4a.5.5 0 0 0-.7.7l2.6 2.6H8.9a.5.5 0 0 0 0 1h9.4l-2.6 2.6a.5.5 0 0 0 0 .7z" data-name="Path 100"/></g></svg>'
+                  +btn("link", "#", "Выйти", iconExit)._theme_transparent
+
+              +e.body
+                - var iconList= '<svg class="nav-tabs__item-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><g data-name="Group 105"><path d="M4.4 0h-3A1.3 1.3 0 0 0 0 1.3v3.1a1.3 1.3 0 0 0 1.3 1.3h3.1a1.3 1.3 0 0 0 1.4-1.3v-3A1.3 1.3 0 0 0 4.4 0zm.4 4.4a.3.3 0 0 1-.4.3h-3a.3.3 0 0 1-.4-.3v-3a.3.3 0 0 1 .3-.4h3.1a.3.3 0 0 1 .4.3z" data-name="Path 91"/><path d="M0 11.6a1.3 1.3 0 0 0 1.3 1.3h3.1a1.3 1.3 0 0 0 1.3-1.3V8.4a1.3 1.3 0 0 0-1.3-1.3h-3A1.3 1.3 0 0 0 0 8.4v3.2zm1-3.2a.3.3 0 0 1 .3-.3h3.1a.3.3 0 0 1 .3.3v3.1a.3.3 0 0 1-.3.4h-3a.3.3 0 0 1-.4-.4v-3z" data-name="Path 92"/><path d="M0 18.7A1.3 1.3 0 0 0 1.3 20h3.1a1.3 1.3 0 0 0 1.3-1.3v-3.2a1.3 1.3 0 0 0-1.3-1.3h-3A1.3 1.3 0 0 0 0 15.5v3.2zm1-3.2a.3.3 0 0 1 .3-.3h3.1a.3.3 0 0 1 .3.3v3.2a.3.3 0 0 1-.3.3h-3a.3.3 0 0 1-.4-.3v-3.2z" data-name="Path 93"/><path d="M8.3 3.4h11.2a.5.5 0 0 0 0-1H8.3a.5.5 0 0 0 0 1z" data-name="Path 94"/><path d="M8.3 10.5h11.2a.5.5 0 0 0 0-1H8.3a.5.5 0 1 0 0 1z" data-name="Path 95"/><path d="M8.3 17.6h11.2a.5.5 0 0 0 0-1H8.3a.5.5 0 1 0 0 1z" data-name="Path 96"/></g></svg>'
+                - var iconPromoCode= '<svg class="nav-tabs__item-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path d="M22.1 6.6l-.2.2a2 2 0 0 1-1.7.7 2.6 2.6 0 0 1-2.7-2.7 2 2 0 0 1 .7-1.7l.2-.2L15.6 0 0 15.6l2.9 2.8.2-.2a2 2 0 0 1 1.7-.7 2.6 2.6 0 0 1 2.7 2.7 2 2 0 0 1-.7 1.7l-.2.2L9.4 25 25 9.4zM7.6 22a2.7 2.7 0 0 0 .7-1.9 3.4 3.4 0 0 0-3.5-3.5 2.7 2.7 0 0 0-2 .7l-1.7-1.8 9-9.1 1.4 1.3.5-.6L10.7 6l4.9-4.8 1.8 1.8a2.7 2.7 0 0 0-.7 1.9 3.4 3.4 0 0 0 3.5 3.5 2.7 2.7 0 0 0 2-.7l1.7 1.8-4.8 4.9-1.3-1.3-.6.5 1.3 1.3-9 9.1z" data-name="Path 88"/><path d="M13.8 10l-1.6-1.5.6-.5 1.5 1.5z" data-name="Path 89"/><path d="M16.5 12.8l-1.6-1.6.6-.5 1.5 1.5z" data-name="Path 90"/></svg>'
+                - var iconSettings= '<svg class="nav-tabs__item-link-icon" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20"><g data-name="Group 106"><path d="M19 7.9l-1.4-.2a8 8 0 0 0-.6-1.4l.8-1.2a1.2 1.2 0 0 0-.1-1.5l-1.2-1.3a1.2 1.2 0 0 0-1-.4 1.2 1.2 0 0 0-.6.3l-1.2.8a7.8 7.8 0 0 0-1.4-.6L12.1 1a1.2 1.2 0 0 0-1.3-1H9.1a1.2 1.2 0 0 0-1.2 1l-.3 1.5a7.7 7.7 0 0 0-1.3.5L5 2.2a1.2 1.2 0 0 0-1.6.1L2.3 3.6A1.2 1.2 0 0 0 2 5.2L3 6.3a7.7 7.7 0 0 0-.6 1.4L1 8a1.2 1.2 0 0 0-1 1.3v1.7a1.2 1.2 0 0 0 1 1.2l1.5.3a7.7 7.7 0 0 0 .5 1.3L2.2 15a1.2 1.2 0 0 0 .1 1.6l1.3 1.2a1.2 1.2 0 0 0 .9.4 1.2 1.2 0 0 0 .7-.2l1.1-.9a7.9 7.9 0 0 0 1.4.6l.2 1.4A1.2 1.2 0 0 0 9 20H11a1.2 1.2 0 0 0 1.2-1l.2-1.4a8 8 0 0 0 1.4-.6l1.2.8a1.2 1.2 0 0 0 .7.3 1.2 1.2 0 0 0 .8-.4l1.3-1.3a1.2 1.2 0 0 0 .1-1.5l-.8-1.2a7.9 7.9 0 0 0 .6-1.4l1.4-.2a1.2 1.2 0 0 0 1-1.2V9A1.2 1.2 0 0 0 19 8zm-.1 3a.1.1 0 0 1-.1 0l-1.8.4a.6.6 0 0 0-.4.4 6.7 6.7 0 0 1-.7 1.7.6.6 0 0 0 0 .7l1 1.4a.1.1 0 0 1 0 .2l-1.2 1.2a.1.1 0 0 1-.1 0L14 16a.6.6 0 0 0-.7 0 6.7 6.7 0 0 1-1.7.7.6.6 0 0 0-.4.4l-.3 1.8a.1.1 0 0 1-.1 0H9L8.6 17a.6.6 0 0 0-.4-.4 7 7 0 0 1-1.7-.7.6.6 0 0 0-.3 0 .6.6 0 0 0-.3 0l-1.5 1a.1.1 0 0 1-.1 0L3 15.7a.1.1 0 0 1 0-.1l1-1.5a.6.6 0 0 0 0-.6 6.6 6.6 0 0 1-.7-1.8.6.6 0 0 0-.4-.4L1.2 11V9.1a.1.1 0 0 1 0-.1L3 8.8a.6.6 0 0 0 .4-.5 6.7 6.7 0 0 1 .7-1.7.6.6 0 0 0 0-.6l-1-1.5a.1.1 0 0 1 0-.1L4.3 3a.1.1 0 0 1 .1 0l1.5 1a.6.6 0 0 0 .6 0 6.6 6.6 0 0 1 1.8-.7.6.6 0 0 0 .4-.4L9 1.2H11l.4 1.8a.6.6 0 0 0 .4.4 6.8 6.8 0 0 1 1.8.7.6.6 0 0 0 .6 0l1.4-1a.1.1 0 0 1 .2 0l1.2 1.2a.1.1 0 0 1 0 .2l-1 1.4a.6.6 0 0 0 0 .7 6.7 6.7 0 0 1 .7 1.7.6.6 0 0 0 .4.4l1.8.3a.1.1 0 0 1 0 .1V11z" data-name="Path 97"/><path d="M10 5.7a4.3 4.3 0 1 0 4.3 4.3A4.3 4.3 0 0 0 10 5.7zm0 7.5a3.2 3.2 0 1 1 3.2-3.2 3.2 3.2 0 0 1-3.2 3.2z" data-name="Path 98"/></g></svg>'
+                // begin Tabs Nav
+                +b.UL.nav-tabs._profile._vertical.nav(id="profile-tabs" role="tablist")
+                  +e.LI.item._profile.nav-item 
+                    +e.A.item-link._profile.nav-link.active(id="profile-purchase-history-tab" data-toggle="tab" href="#profile-purchase-history" role="tab" aria-controls="profile-purchase-history" aria-selected="true")  
+                      | !{iconList}
+                      +e.SPAN.item-link-text История заказов
+                  +e.LI.item._profile.nav-item 
+                    +e.A.item-link._profile.nav-link 
+                      | !{iconPromoCode}
+                      +e.SPAN.item-link-text Промокоды
+                  +e.LI.item._profile.nav-item 
+                    +e.A.item-link._profile.nav-link(id="profile-settings-tab" data-toggle="tab" href="#profile-settings" role="tab" aria-controls="profile-settings" aria-selected="false") 
+                      | !{iconSettings}
+                      +e.SPAN.item-link-text Настройка профиля
+                // end Tabs Nav  
+
+              +e.footer.hidden-mobile_md
+                - var iconExit= '<svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 20 15.2"><g data-name="Group 107"><path d="M0 2.5v10.2a2.5 2.5 0 0 0 2.5 2.5h8.2a2.5 2.5 0 0 0 2.5-2.5V11a.5.5 0 0 0-1 0v1.7a1.5 1.5 0 0 1-1.5 1.5H2.5A1.5 1.5 0 0 1 1 12.7V2.5A1.5 1.5 0 0 1 2.5 1h8.2a1.5 1.5 0 0 1 1.6 1.5v1.7a.5.5 0 1 0 1 0V2.5A2.5 2.5 0 0 0 10.7 0H2.5A2.5 2.5 0 0 0 0 2.5z" data-name="Path 99"/><path d="M15.7 11.4a.5.5 0 0 0 .7 0L20 7.9a.5.5 0 0 0 0-.7l-3.5-3.4a.5.5 0 0 0-.7.7l2.6 2.6H8.9a.5.5 0 0 0 0 1h9.4l-2.6 2.6a.5.5 0 0 0 0 .7z" data-name="Path 100"/></g></svg>'
+                +btn("link", "#", "Выйти", iconExit)._theme_transparent
+
+            // end Topline-profile box
+
+
+          +e.col.col-xl-8.col-lg-8.col-md-7
+            - var iconBasket= '<svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" width="20.4" height="22" viewBox="0 0 20.4 22"><path d="M5.8 14.5H18a2.5 2.5 0 0 0 2.5-2.5V6.8v-.2-.1h-.1v-.1c0-.1 0 0-.1 0H20v-.1H20L4.5 4.2V1.8a.1.1 0 0 0-.1 0 .1.1 0 0 0 0-.1l-.1-.1h-.1a.4.4 0 0 0 0-.1h-.1L.8 0a.6.6 0 0 0-.4 1.2l3 1.2v13.4a2.5 2.5 0 0 0 2.1 2.5 2.5 2.5 0 1 0 4.6 1.2 2.4 2.4 0 0 0-.4-1.2h5.5a2.4 2.4 0 0 0-.3 1.2 2.5 2.5 0 1 0 2.5-2.4H5.8a1.3 1.3 0 0 1-1.2-1.3v-1.7a2.5 2.5 0 0 0 1.2.4zm3 5a1.2 1.2 0 1 1-1.2-1.2A1.2 1.2 0 0 1 9 19.5zm9.8 0a1.2 1.2 0 1 1-1.2-1.2 1.2 1.2 0 0 1 1.2 1.2zm-.7-6.2H6A1.3 1.3 0 0 1 4.5 12V5.4l14.6 2V12a1.3 1.3 0 0 1-1.3 1.3z" class="cls-1"/></svg>'
+
+            // begin Tabs Content  
+            +b.tab-content._profile(id="profile-content-tabs")
+              +e.pane.tab-pane.fade.show.active(id="profile-purchase-history" role="tabpanel" aria-labelledby="profile-purchase-history-tab")  
+
+
+                // begin Accordion
+
+                +b.accordion._orders(id="accordionExample")
+                  +e.item
+                    .card
+                      .card-header(id="headingOne")
+                        +order-box({number: "5", date: "2018-10-09 18:18", dateText: "10.11.2018 18:18", address: "ул. Интернациональная, д. 88, подьезд 3, домофон, этаж 10, кв. 104", restaurant: {src: "img/content/BB&BURGERS-logo.jpg", alt: "BB&BURGERS"}, status: "Доставлен", target: "collapseOne", expanded: "true", togglerClasses: ""})
+
+                    .collapse.show(id="collapseOne" aria-labelledby="headingOne" data-parent="#accordionExample")
+                      .card-body
+                        // begin Table
+                        +b.TABLE.table._order
+                          +e.THEAD
+                            +e.TR
+                              +e.TH Блюдо
+                              +e.TH Категория
+                              +e.TH Цена
+                              +e.TH                            
+
+                          +e.TBODY
+                            +e.TR
+                              +e.TD Куриное филе в чесночной панировке
+                                +b.UL.ul._sm._order
+                                  +e.LI  Микс халапеньо и огурца 
+                                    span +105₽
+                                  +e.LI  Огурец свежий 
+                                    span +1200₽
+                                  +e.LI  Бальзамический уксус
+                                    span +8₽
+
+                              +e.TD Закуски и гарниры
+                              +e.TD 480,0 
+                                +e.SPAN.quantity х 1
+                              +e.TD  
+                                +btn("btn", "button", "", iconBasket)._theme_dark._square._parent_table-order
+                            +e.TR
+                              +e.TD Стейк фри
+                              +e.TD Вегетарианское
+                              +e.TD 1050,0 
+                                +e.SPAN.quantity х 2
+                              +e.TD  
+                                +btn("btn", "button", "", iconBasket)._theme_dark._square._parent_table-order
+                            +e.TR
+                              +e.TD Неряшливый Джо
+                              +e.TD Бургеры
+                              +e.TD 220,0 
+                                +e.SPAN.quantity х 10
+                              +e.TD  
+                                +btn("btn", "button", "", iconBasket)._theme_dark._square._parent_table-order
+                            +e.TR
+                              +e.TD Двойной чизбургер с беконом
+                                +b.UL.ul._sm._order
+                                  +e.LI  Соус BBQ
+                                    span +481₽
+
+                              +e.TD Бургеры
+                              +e.TD 50,0 
+                                +e.SPAN.quantity х 1
+                              +e.TD  
+                                +btn("btn", "button", "", iconBasket)._theme_dark._square._parent_table-order
+                        // end Table
+
+                        +order-box-footer({price: "11 080,50"})
+
+                  +e.item
+                    .card
+                      .card-header(id="headingTwo")
+                        +order-box({number: "18", date: "2018-10-09 12:40", dateText: "11.11.2018 12:40", address: "ул. Академика Королева, д. 106, подьезд 12, домофон, этаж 101, кв. 50", restaurant: {src: "img/content/ilPatio-logo.jpg", alt: "ilPatio"}, status: "Отменён", target: "collapseTwo", expanded: "false", togglerClasses: "collapsed"})
+
+                    .collapse(id="collapseTwo" aria-labelledby="headingTwo" data-parent="#accordionExample")
+                      .card-body
+                        // begin Table
+                        +b.TABLE.table._order
+                          +e.THEAD
+                            +e.TR
+                              +e.TH Блюдо
+                              +e.TH Категория
+                              +e.TH Цена
+                              +e.TH                            
+
+                          +e.TBODY
+                            +e.TR
+                              +e.TD Стейк фри
+                                +b.UL.ul._sm._order
+                                  +e.LI  Бальзамический уксус
+                                    span +8₽
+
+                              +e.TD Гриль
+                              +e.TD 1050,0 
+                                +e.SPAN.quantity х 2
+                              +e.TD  
+                                +btn("btn", "button", "", iconBasket)._theme_dark._square._parent_table-order
+                            +e.TR
+                              +e.TD Неряшливый Джо
+                              +e.TD Бургеры
+                              +e.TD 220,0 
+                                +e.SPAN.quantity х 10
+                              +e.TD  
+                                +btn("btn", "button", "", iconBasket)._theme_dark._square._parent_table-order
+                        // end Table
+
+                        +order-box-footer({price: "5 320,0"})
+
+
+                  +e.item
+                    .card
+                      .card-header(id="headingThree")
+                        +order-box({number: "103", date: "2018-10-09 10:30", dateText: "16.12.2018 10:30", address: "ул. Колотушкина, д. 20, подьезд 2, код: 501, этаж 1, кв. 5", restaurant: {src: "img/content/karrifan-logo.jpg", alt: "karrifan"}, status: "Выполняется", target: "collapseThree", expanded: "false", togglerClasses: "collapsed"})
+
+                    .collapse(id="collapseThree" aria-labelledby="headingThree" data-parent="#accordionExample")
+                      .card-body
+                        // begin Table
+                        +b.TABLE.table._order
+                          +e.THEAD
+                            +e.TR
+                              +e.TH Блюдо
+                              +e.TH Категория
+                              +e.TH Цена
+                              +e.TH                            
+
+                          +e.TBODY
+                            +e.TR
+                              +e.TD Куриное филе в чесночной панировке
+                                +b.UL.ul._sm._order
+                                  +e.LI  Микс халапеньо и огурца 
+                                    span +105₽
+                                  +e.LI  Огурец свежий 
+                                    span +1200₽
+                                  +e.LI  Бальзамический уксус
+                                    span +8₽
+
+                              +e.TD Гриль
+                              +e.TD 8,0 
+                                +e.SPAN.quantity х 2
+                              +e.TD  
+                                +btn("btn", "button", "", iconBasket)._theme_dark._square._parent_table-order
+                        // end Table
+
+                        +order-box-footer({price: "590,0"})
+
+                // end Accordion
+
+                +pagination({href: "#", state: "active"}, {href: "#"}, {href: "#"}, {href: "#"}, {href: "#",}, {href: "#", state: "hidden"}, {href: "#", state: "hidden"}, {href: "#", state: "hidden"}, {href: "#", state: "hidden"}, {href: "#", state: "hidden"}, {href: "#", state: "hidden"}, {href: "#", state: "hidden"}, {href: "#", state: "hidden"}, {href: "#", state: "hidden"}, {href: "#", state: "dots"}, {href: "#"}, {href: "#", state: "next"}).justify-c-e 
+
+
+              +e.pane._profile-settings.tab-pane.fade(id="profile-settings" role="tabpanel" aria-labelledby="profile-settings-tab")  
+
+                +e.profile-block
+                  +e.H2.profile-title Личная информация
+                  +e.FORM(action="#")
+                    +e.row.row
+                      +e.col.col-xl-6.col-lg-6.col-md-12.col-sm-6
+                        +input-box({type: "text", name:"user-name", placeholder:"Имя"})._parent_profile-settings
+                      +e.col.col-xl-6.col-lg-6.col-md-12.col-sm-6
+                        - var telPattern = "^\\+[0-9]\\s\\([0-9]{3}\\)\\s[0-9]{3}[-][0-9]{2}[-][0-9]{2}$"
+                        +input-box({type: "tel", name:"phone", placeholder:"Телефон", pattern: telPattern, required: "true"})._parent_profile-settings
+                      +e.col.col-xl-6.col-lg-6.col-md-12.col-sm-6
+                        +input-box({type: "text", name:"user-surname", placeholder:"Фамилия"})._parent_profile-settings
+                      +e.col.col-xl-6.col-lg-6.col-md-12.col-sm-6
+                        +input-box({type: "email", name:"user-email", placeholder:"Email"})._parent_profile-settings
+                      +e.col.col-xl-6.col-lg-6.col-md-12.col-sm-6
+                        - var datePattern = "^[0-9]{2}[.][0-9]{2}[.][0-9]{4}$"
+                        +input-box({type: "text", name:"user-birth", placeholder:"Дата рождения", dataMaskType:"date",  pattern: datePattern})._parent_profile-settings
+                      +e.col.col-xl-6.col-lg-6.col-md-12.col-sm-6
+                        +btn("btn", "submit", "Сохранить")._theme_dark._full-width 
+
+
+                +e.profile-block
+                  +e.H2.profile-title Данные о доставке
+
+                  +address-box({text: "ул. Интернациональная, д. 88, подьезд 3, домофон, этаж 10, кв. 104"})._parent_profile-settings
+                  +address-box({text: "ул. Академика Королева, д. 106, подьезд 12, домофон, этаж 101, кв. 50"})._parent_profile-settings
+
+
+                  - var iconAddPlusLarge= '<svg class="btn__icon" xmlns="http://www.w3.org/2000/svg" width="21" height="23" viewBox="0 0 27 27"><defs><style>.cls-add-plus{fill:none;stroke:#fff;stroke-linecap:round;stroke-width:2px}</style></defs><g id="icon_add" transform="translate(-814 -892)"><circle id="Ellipse_26" cx="13.5" cy="13.5" r="13.5" data-name="Ellipse 26" transform="translate(814 892)"/><g id="Group_268" data-name="Group 268" transform="translate(-68.5 4.5)"><path id="Line_23" d="M0 0v11.2" class="cls-add-plus" data-name="Line 23" transform="translate(895.7 895.5)"/><path id="Line_24" d="M0 0v11.2" class="cls-add-plus" data-name="Line 24" transform="rotate(90 .1 901.6)"/></g></g></svg>'
+                  +btn("btn", "button", "Добавить адрес", iconAddPlusLarge)._theme_transparent._parent_profile.universal-toggler
+
+                  .hidden
+                    +e.FORM(action="#")
+                      +e.row.row
+                        +e.col.col-xl-6.col-lg-6.col-md-6.col-sm-6
+                          +input-box({type: "text", name:"street", placeholder:"Улица", dropdown: "address"})._margin_b_xs
+                        +e.col.col-xl-6.col-lg-6.col-md-6.col-sm-6
+                          +input-box({type: "text", name:"house" , placeholder:"Дом"})._margin_b_xs
+                        +e.col.col-6.col-xl-6.col-lg-6.col-md-6.col-sm-6
+                          +input-box({type: "text", name:"entrance" , placeholder:"Подъезд"})._margin_b_xs                             
+                        +e.col.col-6.col-xl-6.col-lg-6.col-md-6.col-sm-6
+                          +input-box({type: "text", name:"street" , placeholder:"Код двери"})._margin_b_xs
+                        +e.col.col-6.col-xl-6.col-lg-6.col-md-6.col-sm-6
+                          +input-box({type: "text", name:"floor" , placeholder:"Этаж"})._margin_b_xs
+                        +e.col.col-6.col-xl-6.col-lg-6.col-md-6.col-sm-6                      
+                          +input-box({type: "text", name:"apartment" , placeholder:"Квартира"})._margin_b_xs
+                        +e.col.col-xl-6.col-lg-4.col-md-6.col-sm-6        
+                        +e.col.col-xl-6.col-lg-4.col-md-6.col-sm-6  
+                          +btn("btn", "submit", "Сохранить")._theme_dark._full-width 
+                  // end Tabs Content   
+
+
+
+    include blocks/footer 

@@ -1,0 +1,59 @@
+// begin Breadcrumbs
+.breadcrumbs {
+  @include reset-list;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    color: $darkGrey-hover;
+    font-size: 13px;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+
+    @include media('<md') {
+      font-size: 12px;
+    }
+  }
+
+  &__item-link {
+    color: $darkGrey;
+    font-weight: 500;
+    position: relative;
+
+    &:hover {
+      text-decoration: none;
+    }
+    &:active {
+      text-decoration: none;
+    }
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:before {
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2Ljg0IDEyIj4KICAgIDxkZWZzPgogICAgICAgIDxzdHlsZT4KICAgICAgICAgICAgLmNscy0xe2ZpbGw6I2UxZTFlMX0KICAgICAgICA8L3N0eWxlPgogICAgPC9kZWZzPgogICAgPGcgaWQ9ImFycm93IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTcuMTM4KSI+CiAgICAgICAgPHBhdGggaWQ9IlBhdGhfMjMiIGQ9Ik0xMDMuNzMzIDYuNTk0bC01LjE2IDUuMTZhLjg0Ljg0IDAgMSAxLTEuMTg4LTEuMTg4TDEwMS45NSA2bC00LjU2NS00LjU2NkEuODQuODQgMCAwIDEgOTguNTczLjI0Nmw1LjE2IDUuMTZhLjg0Ljg0IDAgMCAxIDAgMS4xODh6IiBjbGFzcz0iY2xzLTEiIGRhdGEtbmFtZT0iUGF0aCAyMyIvPgogICAgPC9nPgo8L3N2Zz4K);
+      content: '';
+      height: 12px;
+      position: absolute;
+      right: -18px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+    }
+  }
+
+  &_parent_contacts-page,
+  &_parent_about-us {
+    margin-bottom: 60px;
+
+    @include media('<md') {
+      margin-bottom: 30px;
+    }
+  }
+}
+// end Breadcrumbs

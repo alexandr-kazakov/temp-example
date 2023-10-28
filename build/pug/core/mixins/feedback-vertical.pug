@@ -1,0 +1,10 @@
+mixin feedback-vertical(box)
+  // begin Feedback-vertical
+  +b.feedback-vertical&attributes(attributes)
+    +e.IMG.image(src= box.img.src, srcset= box.img.srcset + " 2x", alt= box.img.alt)
+    +e.H3.title= box.title
+    +e.P.descr= box.descr
+    +e.nav
+      +btn("link", "#", "Прочитать все отзывы")._theme_dark._parent_feedback-vertical
+      +btn("link", "#", "Оставить отзыв")._theme_base._parent_feedback-vertical
+  // end Feedback-vertical

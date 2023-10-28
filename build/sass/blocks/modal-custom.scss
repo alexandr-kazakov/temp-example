@@ -1,0 +1,211 @@
+// begin Modal-custom
+.modal-custom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 30px 30px;
+
+  @include media('<xl') {
+    padding: 40px 20px 20px 20px;
+  }
+
+  @include media('<lg') {
+    padding: 30px 15px 20px 15px;
+  }
+
+  @include media('<sm') {
+    padding: 0 15px 20px 15px;
+  }
+
+  &__header {
+    margin-bottom: 30px;
+
+    .modal-custom_login-modal & {
+      margin-bottom: 70px;
+      text-align: center;
+    }
+
+    @include media('<sm') {
+      .modal-custom_login-modal & {
+        text-align: left;
+      }
+    }
+
+    @include media('<md') {
+      .modal-custom_login-modal & {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__footer {
+    border-top: 1px solid #e9e9e9;
+    padding-top: 15px;
+  }
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0;
+
+    @include media('<lg') {
+      font-size: 2.2rem;
+    }
+
+    @include media('<md') {
+      font-size: 2rem;
+
+      .modal-custom_login-modal & {
+        font-size: 2.2rem;
+      }
+    }
+
+    @include media('<md') {
+      font-size: 1.8rem;
+
+      .modal-custom_login-modal & {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  &__section-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    margin: 0 0 15px 0;
+
+    @include media('<md') {
+      font-size: 1.6rem;
+    }
+
+    @include media('<md') {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__mobile-close-btn {
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #e9e9e9;
+    color: $darkGrey;
+    cursor: pointer;
+    display: none;
+    letter-spacing: 0.8px;
+    margin-bottom: 30px;
+    padding: 15px 15px 15px 22px;
+    position: relative;
+    text-align: left;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:before {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMS4yODIiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDExLjI4MiA3Ij4KICAgIDxwYXRoIGQ9Ik0xMC43OTQgMy4wMTJIMS42NjdMMy44NDUuODM0YS40ODkuNDg5IDAgMCAwLS42OTEtLjY5MUwuMTQzIDMuMTU1YS40ODguNDg4IDAgMCAwIDAgLjY5MWwzLjAxMSAzLjAxMmEuNDg5LjQ4OSAwIDAgMCAuNjkxLS42OTFMMS42NjcgMy45ODZoOS4xMjdhLjQ4OS40ODkgMCAxIDAgMC0uOTc3eiIgZGF0YS1uYW1lPSJQYXRoIDE1MCIvPgo8L3N2Zz4K);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      content: '';
+      height: 8px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+    }
+
+    @include media('<sm') {
+      display: block;
+    }
+  }
+
+  &__cart-content {
+    max-height: 450px;
+    margin-bottom: 25px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 16px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border: 5px solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
+      background-color: rgba(0, 0, 0, 0.15);
+      height: 6px;
+      -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05),
+        inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+    }
+    &::-webkit-scrollbar-thumb:vertical {
+      border-radius: 11px;
+      background-color: #b7b6b7;
+      height: 90px;
+      &:hover {
+        background-color: #979797;
+      }
+    }
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-button:start:decrement,
+    &::-webkit-scrollbar-button:end:increment {
+      height: 10px;
+    }
+  }
+
+  &__cart-nav {
+    border-top: 1px solid #e9e9e9;
+    padding: 15px 0 0;
+  }
+
+  &__login-or-text {
+    display: block;
+    padding: 40px 0;
+    text-align: center;
+    @include media('<md') {
+      padding: 20px 0;
+    }
+  }
+
+  &__privacy-policy {
+    padding: 50px 0 30px 0;
+    text-align: center;
+
+    @include media('<md') {
+      padding: 30px 0;
+    }
+    @include media('<sm') {
+      padding: 30px 0 20px 0;
+    }
+  }
+
+  &__col_text-right {
+    text-align: right;
+    @include media('<md') {
+      text-align: center;
+    }
+  }
+
+  &__col_text-center {
+    text-align: center;
+  }
+
+  &__col_text-left {
+    @include media('<md') {
+      text-align: center;
+    }
+  }
+
+  &_login-modal {
+    padding-top: 80px;
+    @include media('<md') {
+      padding-top: 50px;
+    }
+    @include media('<sm') {
+      padding-top: 0;
+    }
+  }
+}
+// end Modal-custom

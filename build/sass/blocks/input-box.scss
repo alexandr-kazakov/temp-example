@@ -1,0 +1,197 @@
+// begin Input-box
+.input-box {
+  position: relative;
+
+  &__icon {
+    left: 18px;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include media('<md') {
+      left: 15px;
+    }
+  }
+
+  &__label {
+    display: block;
+    position: relative;
+    .input-box_icon & {
+      &:before {
+        background-color: #b8b8b8;
+        content: '';
+        height: 30px;
+        position: absolute;
+        left: 53px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+
+        @include media('<md') {
+          left: 48px;
+        }
+      }
+    }
+  }
+
+  &__input-text {
+    border-radius: 2px;
+    border: 1px solid #acacac;
+    background-color: #fff;
+    color: $black;
+    display: inline-block;
+    font-size: 16px;
+    height: 50px;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+    padding: 10px 18px;
+    transition: $transitionBasic;
+    width: 100%;
+    -webkit-appearance: none;
+
+    &::placeholder {
+      color: #b8b8b8;
+      font-size: 1.4rem;
+      opacity: 1;
+    }
+    &:hover {
+      border-color: #e4e4eb;
+      background-color: $gray;
+    }
+    &:focus {
+      border-color: $primary;
+      background-color: #fff;
+      outline: none;
+    }
+    &.success {
+      border-color: $success;
+      padding-right: 28px;
+      ~ .input-box__error-message {
+        ~ .input-box__success-icon {
+          display: block;
+        }
+      }
+    }
+    &.error {
+      border-color: $danger;
+      ~ .input-box__error-message {
+        display: block;
+      }
+    }
+    &:disabled {
+      background-color: #fff;
+      color: #e8e9ec;
+      border-color: $gray;
+      &::placeholder {
+        color: #e8e9ec;
+      }
+    }
+
+    .input-box_icon & {
+      padding-left: 65px;
+    }
+
+    .input-box_parent_restaurant-search-block & {
+      &:focus {
+        box-shadow: 0 0 30px 0 rgba(232, 80, 14, 0.5);
+      }
+    }
+
+    .input-box_parent_login-modal & {
+      padding-right: 0;
+      padding-left: 20px;
+    }
+
+    @include media('<md') {
+      .input-box_parent_restaurant-search-block & {
+        padding-left: 60px;
+      }
+    }
+  }
+
+  &__error-message {
+    color: $danger;
+    display: none;
+    font-size: 12px;
+    margin-top: 4px;
+    padding-left: 18px;
+  }
+
+  &__success-icon {
+    display: none;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__help-text {
+    display: block;
+    font-size: 12px;
+    margin-top: 8px;
+    padding-left: 18px;
+  }
+
+  &_parent_restaurant-search-block {
+    max-width: 550px;
+    margin: 0 auto 40px auto;
+
+    @include media('<md') {
+      margin: 0 auto 10px auto;
+    }
+  }
+
+  &_parent_cart-modal {
+    max-width: 370px;
+    margin-bottom: 20px;
+  }
+
+  &_parent_login-modal {
+    max-width: 400px;
+    margin: 0 auto;
+
+    @include media('<sm') {
+      max-width: none;
+    }
+  }
+
+  &_parent_profile-settings {
+    margin-bottom: 30px;
+
+    @include media('<sm') {
+      margin-bottom: 15px;
+    }
+  }
+
+  &_button {
+    display: flex;
+
+    @include media('<sm') {
+      &.input-box_parent_login-modal {
+        display: block;
+      }
+    }
+  }
+
+  &_full-width {
+    width: 100%;
+
+    .input-box__label {
+      width: 100%;
+    }
+  }
+
+  &_margin_b_md {
+    margin-bottom: 30px;
+  }
+
+  &_margin_b_sm {
+    margin-bottom: 20px;
+  }
+
+  &_margin_b_xs {
+    margin-bottom: 15px;
+  }
+}
+
+// end Input-box

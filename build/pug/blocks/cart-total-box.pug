@@ -1,0 +1,14 @@
+// begin Cart-total-box
++b.cart-total-box(class= cartTotalBox ? cartTotalBox : false)
+  +e.discount
+    +e.SPAN Скидка составила 10%
+    +e.SPAN 760руб
+
+  +e.cost
+    +e.SPAN Итого:
+    +e.SPAN.cost-value
+      +e.SPAN.cost-fake 13 684 руб
+      | 11 684
+      +e.SPAN.cost-currency руб
+
+// end Cart-total-box

@@ -1,0 +1,62 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Рестораны'
+  - var pageDescription = 'Описание'
+  - var pageKeywords = 'Ключевые слова'
+  - var userState= 'logout'
+
+block content
+  +b.page-wrapper
+    +header({state:'logout', theme: ""})(id="header")
+
+    +b.SECTION.section._search-restaurants._bg_light-table
+      +e.SPAN.bg-light-table-line-left
+      +e.SPAN.bg-light-table-line-right
+      +e.container.container
+        +restaurant-search-box({title: "Найди свои любимые блюда", descr: "Ваши любимые рестораны в одном месте", parent: "_parent_restaurant-search-block"}, {inputPlaceholder: "Что бы съесть?", inputIcon: "iconPlateAppliances"})._parent_search-restaurants.text-align-c
+
+    +b.section._breadcrumbs
+      +e.container.container
+        +breadcrumbs("Главная", "Рестораны")
+
+
+    +b.section._filter-dropdown._margin_b_md
+      +e.container.container
+        .filter-dropdown-mobile.display-f.justify-c-c.show-mobile_md
+          +btn("btn", "button", "Фильтр по ресторанам")(data-toggle="modal" data-target="#filter-restaurants-modal")._theme_dark._lg._full-width
+
+        +e.FORM(action="#").form_filter-dropdown.hidden-mobile_md
+          +e.row.row
+            +e.col.col-xl-4.col-lg-4.col-md-4
+              +toggle-dropdown({title: "Тип кухни"}, {status: "checkbox-kitchen-type"})
+            +e.col.col-xl-4.col-lg-4.col-md-4
+              +toggle-dropdown({title: "Минимальная стоимость заказа"}, {status: "checkbox-min-price"})
+            +e.col.col-xl-4.col-lg-4.col-md-4
+              +toggle-dropdown({title: "Среднее время доставки"}, {status: "checkbox-time"})
+
+
+    +b.SECTION.section._restaurants
+      +e.container.container
+        +section-header({title: "", subtitle: "Ближайших в Вашем районе", type: "number"})._margin_b_sm
+
+        +e.row.row
+          +e.col.col-xl-3.col-lg-4.col-md-6.col-sm-6.col-xs-12    
+            +restaurant-card({title: "BB&BURGERS", kitchen: "Европейская кухня", minPrice: "500", time: "30", stars: "4", reviews: "14", imgBG: "img/content/restaurant-1.jpg", imgLogo: {imgLogoSrc: "img/content/restaurant-1-logo.jpg", imgLogAlt: "Чайхона №1 Тимура Ланского"}})._margin_b_md
+
+          +e.col.col-xl-3.col-lg-4.col-md-6.col-sm-6.col-xs-12      
+            +restaurant-card({title: "Чайхона №1 Тимура Ланского", kitchen: "Итальянская / Японская", minPrice: "1500", time: "9", stars: "1", reviews: "5", imgBG: "img/content/restaurant-2.jpg", imgLogo: {imgLogoSrc: "img/content/SWISSYARD-logo.jpg", imgLogAlt: "Чайхона №1 Тимура Ланского"}})._margin_b_md
+
+          +e.col.col-xl-3.col-lg-4.col-md-6.col-sm-6.col-xs-12
+            +restaurant-card({title: "Ivan’s Pizza", kitchen: "Альпийская / Европейская", minPrice: "0", time: "100", stars: "8", reviews: "108", imgBG: "img/content/restaurant-1.jpg", imgLogo: {imgLogoSrc: "img/content/restaurant-1-logo.jpg", imgLogAlt: "Чайхона №1 Тимура Ланского"}})._margin_b_md
+
+          +e.col.col-xl-3.col-lg-4.col-md-6.col-sm-6.col-xs-12
+            +restaurant-card({title: "Pizza Romana", kitchen: "Вегетарианская", minPrice: "50", time: "30", stars: "3", reviews: "0", imgBG: "img/content/restaurant-2.jpg", imgLogo: {imgLogoSrc: "img/content/SWISSYARD-logo.jpg", imgLogAlt: "Чайхона №1 Тимура Ланского"}})._margin_b_md
+
+          +e.col.col-xl-3.col-lg-4.col-md-6.col-sm-6.col-xs-12
+            +restaurant-card({title: "Pizza Romana", kitchen: "Вегетарианская", minPrice: "50", time: "30", stars: "3", reviews: "16", imgBG: "img/content/restaurant-2.jpg", imgLogo: {imgLogoSrc: "img/content/SWISSYARD-logo.jpg", imgLogAlt: "Чайхона №1 Тимура Ланского"}})._margin_b_md
+          +e.col.col-xl-3.col-lg-4.col-md-6.col-sm-6.col-xs-12      
+            +restaurant-card({title: "Ivan’s Pizza", kitchen: "Альпийская / Европейская", minPrice: "0", time: "100", stars: "8", reviews: "986", imgBG: "img/content/restaurant-1.jpg", imgLogo: {imgLogoSrc: "img/content/restaurant-1-logo.jpg", imgLogAlt: "Чайхона №1 Тимура Ланского"}})._margin_b_md
+
+
+    include blocks/footer 

@@ -1,0 +1,36 @@
+include ../bemto/bemto
+include   mixins
+
+doctype html
+html(lang="ru")
+  block vars
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width,initial-scale=1.0, maximum-scale=1, shrink-to-fit=no')
+    // begin Удалить <meta name="robots"
+    meta(name="robots" content="noindex, nofollow")
+    // end Удалить <meta name="robots"
+    meta( name="format-detection" content="telephone=no")
+    link(href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,700,700i&amp;subset=cyrillic" rel="stylesheet")
+    title #{pageTitle}
+    meta(name='description', content= pageDescription)
+    meta(name='keywords', content= pageKeywords)
+    link(rel="stylesheet" href="css/bundle.min.css")
+  body
+    block content
+
+
+    +b.overlay(id="overlay")
+
+    include ../blocks/mobile-toolbar
+    include ../blocks/mobile-menu
+
+    include ../blocks/product-card-modal
+    include ../blocks/cart-modal
+    include ../blocks/login-modal
+    include ../blocks/filter-restaurants-modal
+    include ../blocks/filter-restaurant-modal
+
+    block scripts 
+      script(src="js/bundle.min.js") 

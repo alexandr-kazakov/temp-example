@@ -1,0 +1,9 @@
+mixin restaurant-data-box(price, time, open)
+  // begin Restaurant-data box
+  +b.restaurant-data-box&attributes(attributes)
+    if open
+      +e.SPAN.open= open.openTime
+
+    +e.SPAN.price= "Мин " + price.minPrice + "₽"
+    +e.SPAN.time=  time.maxTime + " мин"
+  // end Restaurant-data box

@@ -1,0 +1,19 @@
+// begin Loader
+.loader {
+  display: inline-block;
+  height: 64px;
+  width: 64px;
+
+  &:after {
+    animation: rotate360 1.2s linear infinite;
+    border-radius: 50%;
+    border: 5px solid $primary;
+    border-color: $primary transparent $primary transparent;
+    content: '';
+    display: block;
+    height: 64px;
+    margin: 1px;
+    width: 64px;
+  }
+}
+// end Loader

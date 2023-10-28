@@ -1,0 +1,20 @@
+mixin check-box(box)
+  // begin Checkbox-box
+  +b.LABEL.check-box&attributes(attributes)
+    +e.INPUT.input(name= box.name, type="checkbox", checked = box.checked ? "checked" : false)
+    +e.SPAN.checkmark
+
+    if box.title 
+      if box.title === "login-modal"
+        +e.SPAN.title  
+          +e.SPAN.text  Я ознакомлен с &nbsp; 
+          | #[a(href='#') Политикой конфиденциальности]
+
+      else
+        +e.SPAN.title
+          +e.SPAN.text= box.title 
+
+          if box.price 
+            +e.SPAN.price= box.price 
+
+  // end Checkbox-box

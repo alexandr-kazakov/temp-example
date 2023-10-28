@@ -1,0 +1,20 @@
+mixin pagination(...items)
+
+  // begin Pagination
+  +b.pagination&attributes(attributes)
+    each item, index in items
+
+      if item.state === "dots" 
+        +e.SPAN.dots 
+
+      else
+        if item.state === "next" 
+          +e.A.next(href= item.href)
+          - break
+
+        if item.state === "prev" 
+          +e.A.prev(href= item.href)
+
+        +e.A.item(href= item.href, class=(item.state === "active" ? item.state : item.state === "hidden" ? "hidden" : false))= index + 1
+
+  // end Pagination

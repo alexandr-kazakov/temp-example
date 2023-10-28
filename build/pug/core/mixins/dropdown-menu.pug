@@ -1,0 +1,38 @@
+mixin dropdown-menu(box, ...items)
+  +b.UL.dropdown-menu&attributes(attributes)
+    if box.status === "search"
+      each item in items
+        +e.LI.item
+          | #{item.title}
+          if item.subtitle
+            +e.SPAN.subtitle= item.subtitle
+
+    if box.status === "checkbox-kitchen-type"
+      +e.LI.item
+        +check-box({name: "kitchen-type-all", title: "Все"})._text._lg._parent_restaurants-toggle-dropdown
+      +e.LI.item
+        +check-box({name: "kitchen-type-Europe", title: "Европейская"})._text._lg._parent_restaurants-toggle-dropdown
+      +e.LI.item
+        +check-box({name: "kitchen-type-Caucasus", title: "Кавказская"})._text._lg._parent_restaurants-toggle-dropdown
+      +e.LI.item
+        +check-box({name: "kitchen-type-Japan", title: "Японская"})._text._lg._parent_restaurants-toggle-dropdown
+
+    if box.status === "checkbox-min-price"
+      +e.LI.item
+        +check-box({name: "min-price-all", title: "Все"})._text._lg._parent_restaurants-toggle-dropdown
+      +e.LI.item
+        +check-box({name: "min-price-before500", title: "До 500 руб"})._text._lg._parent_restaurants-toggle-dropdown
+      +e.LI.item
+        +check-box({name: "min-price-500to1000", title: "От 500 до 1000 руб"})._text._lg._parent_restaurants-toggle-dropdown
+      +e.LI.item
+        +check-box({name: "min-price-more1000", title: "От 1000 руб"})._text._lg._parent_restaurants-toggle-dropdown
+
+    if box.status === "checkbox-time"
+      +e.LI.item
+        +check-box({name: "time-all", title: "Не имеет значения"})._text._lg._parent_restaurants-toggle-dropdown
+      +e.LI.item
+        +check-box({name: "time-30min", title: "30 мин"})._text._lg._parent_restaurants-toggle-dropdown
+      +e.LI.item
+        +check-box({name: "time-45min", title: "45 мин"})._text._lg._parent_restaurants-toggle-dropdown
+      +e.LI.item
+        +check-box({name: "time-1hour", title: "1 час"})._text._lg._parent_restaurants-toggle-dropdown

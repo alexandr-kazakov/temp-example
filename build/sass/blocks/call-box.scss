@@ -1,0 +1,160 @@
+// begin Call-box
+.call-box {
+  display: inline-flex;
+  flex-direction: column;
+
+  @include media('<md') {
+    &.call-box_parent_header {
+      display: none;
+    }
+  }
+
+  &__phone {
+    color: #1e262d;
+    display: inline-block;
+    font-size: 2.2rem;
+    letter-spacing: 1.2px;
+    margin-bottom: 6px;
+
+    &:hover {
+      color: $primary-hover;
+      text-decoration: none;
+    }
+    &:active {
+      text-decoration: none;
+    }
+    &:focus {
+      text-decoration: none;
+    }
+
+    .call-box_parent_footer & {
+      color: #474753;
+      letter-spacing: 0.8px;
+      &:hover {
+        color: $primary-hover;
+      }
+    }
+
+    @include media('<xl') {
+      .call-box_parent_header & {
+        font-size: 1.7rem;
+      }
+    }
+
+    @include media('<lg') {
+      .call-box_parent_header & {
+        font-size: 1.4rem;
+        letter-spacing: 0.3px;
+      }
+
+      .call-box_parent_footer & {
+        font-size: 2rem;
+      }
+    }
+
+    @include media('<md') {
+      .call-box_parent_footer & {
+        font-size: 1.8rem;
+      }
+    }
+
+    .call-box_theme_white & {
+      &:not(:hover) {
+        color: #fff;
+      }
+    }
+  }
+
+  &__btn {
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    color: $darkGrey;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    padding: 2px 0 2px 29px;
+    position: relative;
+    transition: $transitionBasic;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      color: $primary-hover;
+      .call-box__btn-icon {
+        fill: $primary-hover;
+      }
+    }
+
+    @include media('<xl') {
+      .call-box_parent_header & {
+        font-size: 12px;
+        padding: 2px 0 2px 22px;
+      }
+    }
+    @include media('<lg') {
+      .call-box_parent_header & {
+        font-size: 10px;
+        padding: 2px 0 2px 20px;
+      }
+    }
+    @include media('<md') {
+      .call-box_parent_footer & {
+        display: none;
+      }
+    }
+
+    .call-box_theme_white & {
+      &:not(:hover) {
+        color: #fff;
+      }
+    }
+    .call-box_parent_mobile-menu & {
+      align-self: center;
+    }
+  }
+
+  &__btn-icon {
+    height: 20px;
+    left: 0;
+    position: absolute;
+    transition: $transitionBasic;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+
+    @include media('<xl') {
+      .call-box_parent_header & {
+        height: 17px;
+        width: 17px;
+      }
+    }
+    @include media('<lg') {
+      .call-box_parent_header & {
+        height: 14px;
+        width: 14px;
+      }
+    }
+
+    .call-box_theme_white & {
+      fill: #fff;
+    }
+  }
+
+  &_margin_b_lg {
+    margin-bottom: 50px;
+
+    @include media('<md') {
+      &.call-box_parent_footer {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &_margin_b_md {
+    margin-bottom: 30px;
+  }
+  &_margin_b_sm {
+    margin-bottom: 20px;
+  }
+}
+// end Call-box

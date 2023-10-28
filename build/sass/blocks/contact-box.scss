@@ -1,0 +1,35 @@
+// begin Contact-box
+.contact-box {
+  border: 1px solid #e2e2e2;
+  padding: 30px;
+  text-align: center;
+
+  &__title {
+    font-size: 1.8rem;
+    margin: 0 0 30px 0;
+  }
+
+  &__items {
+    @include reset-list;
+  }
+
+  &__item {
+    display: block;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+
+    span {
+      display: inline-block;
+    }
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  &_margin_b_md {
+    margin-bottom: 30px;
+  }
+}
+// end Contact-box

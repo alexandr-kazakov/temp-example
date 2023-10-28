@@ -1,0 +1,10 @@
+mixin icon-left-box(box)
+  // begin Icon-left-box
+  +b.icon-left-box&attributes(attributes)
+    +e.left
+      | !{box.icon}
+    +e.right
+      if box.title
+        +e.H3.title= box.title
+      +e.P.descr= box.descr
+  // end Icon-left-box

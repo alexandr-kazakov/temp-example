@@ -1,0 +1,23 @@
+mixin select-box(select,  ...items)
+  // begin Select-Box
+  +b.select-box&attributes(attributes)
+    +e.SELECT(name= select.name).true-select.hidden
+      each item in items
+        if item.state !== "title"
+          +e.option(value= item.value, selected = (item.active ? "selected" : false ))= item.text
+    +e.DIV.fake-select(class=(select.state ? select.state : false))   
+      if select.helpText
+        +e.SPAN.help-text= select.helpText
+
+      +e.BUTTON.dropdown-toggle(type="button" class= select.icon ? "_icon" : false )
+        if select.icon
+          | !{select.icon}  
+        +e.SPAN.dropdown-toggle-text= select.selected
+
+      +e.UL.dropdown
+        each item in items
+          +e.LI(class = (item.active ? "dropdown-item active" : item.state === "title" ? "dropdown-item-title" : "dropdown-item" ))= item.text
+    +e.SPAN.error-message=(select.state  === "error" ?  "Ошибка. Обязательное поле." : '')
+
+  // end Select-Box
+

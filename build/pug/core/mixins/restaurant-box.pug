@@ -1,0 +1,12 @@
+mixin restaurant-box(box)
+  // begin Restaurant-box
+  +b.restaurant-box&attributes(attributes)
+    +e.A.link(href= box.href)
+      +e.DIV.left
+        +e.IMG.image(src= box.img.src, srcset= box.img.srcset + " 2x", alt= box.img.alt)
+      +e.DIV.right
+        +e.H4.title= box.title
+        +stars-rating({stars: box.stars})
+
+
+  // end Restaurant-box

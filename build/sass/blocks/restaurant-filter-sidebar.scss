@@ -1,0 +1,11 @@
+// begin Restaurant-filter-sidebar
+.restaurant-filter-sidebar {
+  border: 1px solid #e9e9e9;
+
+  &__list {
+    @include reset-list;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+// end Restaurant-filter-sidebar

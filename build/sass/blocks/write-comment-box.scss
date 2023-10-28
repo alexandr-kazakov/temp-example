@@ -1,0 +1,73 @@
+// begin Write-comment-box
+.write-comment-box {
+  border: 1px solid #e2e2e2;
+  padding: 15px 30px;
+
+  &__header {
+    align-items: center;
+    display: flex;
+
+    @include media('<md') {
+      margin-bottom: 10px;
+
+      .write-comment-box_no-stars_flex-row & {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__image {
+    border-radius: 50%;
+    height: auto;
+    margin: 0 30px 0 0;
+    transform: translateY(50%);
+    width: 50px;
+
+    .write-comment-box_no-stars_flex-row & {
+      transform: none;
+    }
+
+    @include media('<md') {
+      margin: 0 15px 0 0;
+      transform: none;
+      width: 40px;
+    }
+  }
+
+  &__body {
+    display: flex;
+
+    .write-comment-box_no-stars_flex-row & {
+      flex: 1;
+    }
+
+    @include media('<md') {
+      flex-direction: column;
+    }
+  }
+
+  @include media('<md') {
+    padding: 15px;
+  }
+
+  &_no-stars_flex-row {
+    display: flex;
+
+    @include media('<md') {
+      flex-direction: column;
+    }
+  }
+
+  &_parent_about-us-reviews {
+    margin-bottom: 30px;
+
+    @include media('<lg') {
+      margin-bottom: 10px;
+    }
+
+    @include media('<md') {
+      margin-bottom: 30px;
+    }
+  }
+}
+// end Write-comment-box

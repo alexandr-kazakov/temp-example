@@ -1,0 +1,67 @@
+// begin Double-text-box
+.double-text-box {
+  color: #474753;
+  font-family: $journalismFont;
+  font-size: 7rem;
+  margin: 0 0 30px 0;
+  position: relative;
+  text-align: center;
+
+  @include media('<md') {
+    font-size: 5rem;
+  }
+  @include media('<sm') {
+    font-size: 3.8rem;
+  }
+
+  &:before {
+    content: attr(data-background-text);
+    color: rgba(71, 71, 83, 0.1);
+    bottom: -7px;
+    font-size: 11.1rem;
+    line-height: 1;
+    position: absolute;
+    pointer-events: none;
+    right: 50%;
+    transform: translateX(50%);
+    user-select: none;
+    white-space: nowrap;
+
+    @include media('<md') {
+      display: none;
+    }
+  }
+
+  &_sm {
+    font-size: 5.5rem;
+    &:before {
+      font-size: 9rem;
+      bottom: -6px;
+    }
+
+    @include media('<md') {
+      font-size: 5rem;
+    }
+    @include media('<sm') {
+      font-size: 3.8rem;
+    }
+  }
+
+  &_number {
+    display: inline-block;
+    line-height: 0.86;
+    &:before {
+      bottom: 50%;
+      right: -27px;
+      transform: translateY(50%);
+    }
+  }
+
+  &_theme_white {
+    color: #ffffff;
+    &:before {
+      color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+// end Double-text-box

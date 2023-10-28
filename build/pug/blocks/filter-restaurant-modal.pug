@@ -1,0 +1,32 @@
+// begin Filter-restaurant Modal
++modal({size: "modal-xl"})(id="filter-restaurant-modal")._product-card-modal.fade.modal_mobile-full
+  +b.modal-custom._filter-restaurant-modal
+    +e.BUTTON.mobile-close-btn(type="button" data-dismiss="modal" aria-label="Close") Назад
+    +e.FORM(action="#")
+      +e.content
+        +e.header
+          +e.H3.title Фильтр по Блюдам
+
+        +e.H4.section-title Категории
+        +e.row.row.margin-b-xs
+          +e.col.col
+            +radio-box-classic({name: "category", value: "all", title: "Все блюда", checked: "true"})._display_flex._margin_b_sm 
+            +radio-box-classic({name: "category", value: "burgers", title: "Бургеры"})._display_flex._margin_b_sm 
+            +radio-box-classic({name: "category", value: "grill", title: "Гриль"})._display_flex._margin_b_sm 
+            +radio-box-classic({name: "category", value: "snacks", title: "Закуски и гарниры"})._display_flex._margin_b_sm 
+            +radio-box-classic({name: "category", value: "salads", title: "Салаты"})._display_flex._margin_b_sm 
+            +radio-box-classic({name: "category", value: "drinks", title: "Напитки"})._display_flex._margin_b_sm 
+
+        +e.H4.section-title Подкатегории
+        +e.row.row.margin-b-xs
+          +e.col.col
+            +check-box({name: "dietary", title: "Диетическое"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "porkFree", title: "Без свинины"})._text._margin_b_sm._display_flex._sm          
+            +check-box({name: "vegetarian", title: "Вегетарианское"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "notSharp", title: "Не острое"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "sharp", title: "Острое"})._text._margin_b_sm._display_flex._sm
+
+        +e.footer
+          +btn("btn", "submit", "Применить фильтр")._theme_dark._filter-restaurants-modal
+
+// end Filter-restaurant Modal

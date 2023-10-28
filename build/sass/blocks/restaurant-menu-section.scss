@@ -1,0 +1,39 @@
+// begin Restaurant-menu-section
+.restaurant-menu-section {
+  &__title {
+    font-family: $MontserratFont;
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+    @include media('<sm') {
+      text-align: center;
+    }
+  }
+
+  &__menu-row {
+    margin-bottom: 30px;
+  }
+
+  @include media('<lg') {
+    &__menu-row {
+      margin-right: -5px;
+      margin-left: -5px;
+    }
+    &__menu-col {
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
+
+  @include media('<md') {
+    &__menu-row {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+    &__menu-col {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+}
+// end Restaurant-menu-section

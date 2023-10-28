@@ -1,0 +1,12 @@
+// begin Checkout-header
+.checkout-header {
+  color: $black;
+  font-size: 3.8rem;
+  letter-spacing: 2.1px;
+  margin: 0;
+
+  &__highlight {
+    color: $primary;
+  }
+}
+// end Checkout-header

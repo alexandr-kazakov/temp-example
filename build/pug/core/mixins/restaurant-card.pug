@@ -1,0 +1,19 @@
+- var clockOne= '<svg class="restaurant-card__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10"><g id="icon_done" transform="translate(-9.8 -5.1)"><g data-name="Group 177" transform="translate(9.8 5.1)"><path id="Path_157" d="M105 100a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 9.2a4.2 4.2 0 1 1 4.2-4.2 4.2 4.2 0 0 1-4.2 4.2z" fill="#aeaeae" data-name="Path 157" transform="translate(-100 -100)"/><path id="Path_159" d="M191 201.2l-1.8 1.9-.6-.6a.4.4 0 0 0-.6.6l1 .9a.4.4 0 0 0 .2 0 .4.4 0 0 0 .3 0l2.2-2.2a.4.4 0 1 0-.6-.6z" fill="#aeaeae" data-name="Path 159" transform="translate(-184.8 -197.6)"/></g></g></svg>'
+- var clockTwo= '<svg class="restaurant-card__icon active" xmlns="http://www.w3.org/2000/svg" '
+
+mixin restaurant-card(box) 
+  // begin Restaurant-card
+  +b.A.restaurant-card(href="#")&attributes(attributes)
+    +e.DIV.bg-image-wrapper
+      +e.bg-image(style="background-image: url(" + box.imgBG + ")")
+    +e.DIV.content
+      +e.logo
+        +e.IMG.logo-image(src= box.imgLogo.imgLogoSrc , alt= box.imgLogo.imgLogAlt)
+      +e.H3.title= box.title
+      +e.SPAN.kitchen= box.kitchen
+      +restaurant-data-box({minPrice: box.minPrice}, {maxTime: box.time })._sm.justify-c-c 
+
+    +e.DIV.footer
+      +stars-rating({stars: box.stars})._lg._margin_r_md
+      +e.SPAN.reviews= box.reviews + " отзывов"
+  // end Restaurant-card

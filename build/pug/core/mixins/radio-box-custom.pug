@@ -1,0 +1,7 @@
+mixin radio-box-custom(box) 
+  // begin Radio-box-custom
+  +b.LABEL.radio-box-custom&attributes(attributes)
+    +e.INPUT.input(name= box.name, value=box.value, type="radio", checked= box.checked ? "checked" : false)
+    +e.SPAN.title
+      +e.SPAN.text= box.title 
+  // end Radio-box-custom

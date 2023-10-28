@@ -1,0 +1,26 @@
+- var ratingStar= '<svg class="stars-rating__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.1 11"><path d="M6.3.2l1.5 3.5 4 .3a.3.3 0 0 1 .2.5L9 7l.9 3.6a.3.3 0 0 1-.5.4L6 9l-3.3 2a.3.3 0 0 1-.5-.4L3 7 0 4.5A.3.3 0 0 1 .3 4l4-.3L5.6.2a.3.3 0 0 1 .6 0z" data-name="Path 3"/></svg>'
+- var ratingStarActive= '<svg class="stars-rating__icon active" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.1 11"><path d="M6.3.2l1.5 3.5 4 .3a.3.3 0 0 1 .2.5L9 7l.9 3.6a.3.3 0 0 1-.5.4L6 9l-3.3 2a.3.3 0 0 1-.5-.4L3 7 0 4.5A.3.3 0 0 1 .3 4l4-.3L5.6.2a.3.3 0 0 1 .6 0z" data-name="Path 3"/></svg>'
+
+
+mixin stars-rating(box)
+  // begin Stars-rating
+  +b.stars-rating&attributes(attributes)
+    | !{ratingStarActive}
+    if box.stars > 1
+      | !{ratingStarActive}
+    else
+      | !{ratingStar}
+    if box.stars > 2
+      | !{ratingStarActive}
+    else
+      | !{ratingStar}
+    if box.stars > 3
+      | !{ratingStarActive}
+    else
+      | !{ratingStar}
+    if box.stars > 4
+      | !{ratingStarActive}
+    else
+      | !{ratingStar}
+
+  // end Stars-rating

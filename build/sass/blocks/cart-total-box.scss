@@ -1,0 +1,90 @@
+// begin Cart-total-box
+.cart-total-box {
+  &__discount,
+  &__cost {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__discount {
+    color: #aeaeae;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+
+    .cart-total-box_sm & {
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      margin-bottom: 2px;
+    }
+
+    @include media('<md') {
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__cost {
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+
+    .cart-total-box_sm & {
+      font-size: 1.8rem;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+    }
+
+    @include media('<md') {
+      font-size: 1.8rem;
+      letter-spacing: 0.4;
+    }
+  }
+
+  &__cost-value {
+    align-items: center;
+    display: flex;
+  }
+
+  &__cost-fake {
+    color: #b1b1b1;
+    font-size: 1.7rem;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+    margin-right: 15px;
+    position: relative;
+
+    .cart-total-box_sm & {
+      font-size: 1.4rem;
+    }
+
+    &:before {
+      background-color: #b1b1b1;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+
+    @include media('<md') {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__cost-currency {
+    font-size: 1.6rem;
+    letter-spacing: 0.6px;
+
+    @include media('<md') {
+      font-size: 1.4rem;
+    }
+  }
+
+  &_margin_b_sm {
+    margin-bottom: 20px;
+  }
+}
+// end Cart-total-box

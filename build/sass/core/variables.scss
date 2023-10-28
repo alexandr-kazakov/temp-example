@@ -1,0 +1,60 @@
+// Fonts
+$journalismFont: 'journalism2', 'Helvetica', 'Arial', sans-serif;
+$MontserratFont: 'Montserrat', sans-serif;
+
+// Colors
+$primary: #e8500e;
+$primary-hover: #fe5c15;
+
+$black: #2b2b2b;
+$black-hover: #363636;
+
+$info: #4a90e2;
+$info-hover: #66a8f4;
+
+$success: #189d3f;
+$success-hover: #1cb649;
+
+$warning: #f5a623;
+$warning-hover: #fdb640;
+
+$danger: #a30b28;
+$danger-hover: #b50d2d;
+
+$gray: #f6f6f6;
+$gray-hover: #e6e5e5;
+
+$darkGrey: #454553;
+$darkGrey-hover: #555565;
+
+$titleText: #494949;
+
+// Bootstrap Grid begin
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+// Bootstrap Grid end
+// Include Media SCSS mixin plugin begin
+$breakpoints: (
+  'xs': 380px,
+  'sm-3': 480px,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px
+); // Include Media SCSS mixin plugin end
+// Other
+$transitionBasic: all 0.3s ease;

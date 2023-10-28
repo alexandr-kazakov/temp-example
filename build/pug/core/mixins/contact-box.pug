@@ -1,0 +1,8 @@
+mixin contact-box(box)
+  // begin Contact-box
+  +b.contact-box&attributes(attributes)
+    +e.H3.title= box.title
+
+    if block
+      block
+  // end Contact-box

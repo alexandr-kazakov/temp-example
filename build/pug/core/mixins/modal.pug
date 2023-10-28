@@ -1,0 +1,9 @@
+mixin modal(box)
+  +b.modal(tabindex="-1", role="dialog", aria-hidden="true")&attributes(attributes)
+    +e.modal-dialog.modal-dialog(role="document" class= box.size ? box.size : false)
+      +e.modal-content.modal-content
+        +e.modal-body.modal-body
+          +sandwich(data-dismiss="modal", aria-label="Close")._theme_close._parent_modal
+          if block
+            block
+

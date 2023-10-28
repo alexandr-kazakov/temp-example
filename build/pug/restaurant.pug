@@ -1,0 +1,185 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Ресторан'
+  - var pageDescription = 'Описание'
+  - var pageKeywords = 'Ключевые слова'
+  - var userState= 'login'
+
+block content
+  +b.page-wrapper
+    +header({state: userState, theme: ""})(id="header")
+
+    +b.section._breadcrumbs
+      +e.container.container
+        +breadcrumbs("Главная", "Рестораны", "BB&BURGERS")
+
+    +b.SECTION.section._topline-restaurant
+      +e.container.container
+        // begin Topline-restaurant box
+        +b.topline-restaurant-box._margin_b-md
+          +e.bg-image-wrapper
+            +e.bg-image
+
+          +e.row.row
+            +e.col-left.col-xl-3.col-lg-3.col-md-3
+              +e.logo
+                +e.IMG.logo-image(src="img/content/topline-BB&BURGERS-logo.jpg" , alt="BB&BURGERS")
+            +e.col-right.col-xl-9.col-lg-9.col-md-9
+              +e.info
+                +e.info-left
+                  +e.H1.title BB&BURGERS
+                  +restaurant-data-box({minPrice: "500"}, {maxTime: "30"}, {openTime: "Открыто до 22.00"})._parent_topline-restaurant-box
+                +e.info-right             
+                  +e.address  ул. Интернациональная, 66
+                  +e.rating
+                    +stars-rating({stars: "3"})._lg._margin_r_sm._parent_topline-restaurant-box
+                    +e.SPAN.reviews= "12 отзывов"
+              +e.mobile
+                +e.SPAN.mobile-open-time Открыто до 22.00
+        // end Topline-restaurant box
+
+    +b.section._tabs-restaurant
+      +e.container.container
+        +e.row.row
+          +e.col.col-xl-3.col-lg-3.col-md-3
+          +e.col.col-xl-9.col-lg-9.col-md-9
+            - var iconMenu= '<svg class="nav-tabs__item-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28"><g data-name="Group 168"><g data-name="Group 167"><path d="M8.6 0H3A2.9 2.9 0 0 0 0 2.9v5.7a2.9 2.9 0 0 0 2.9 3h5.7a2.9 2.9 0 0 0 3-3V3a2.9 2.9 0 0 0-3-2.9zm1 8.6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h5.7a1 1 0 0 1 1 1z" data-name="Path 151"/></g></g><g data-name="Group 170"><g data-name="Group 169"><path d="M22 0h-5.6a3 3 0 0 0-3 3v5.6a3 3 0 0 0 3 3h5.7a3 3 0 0 0 2.9-3V2.9A3 3 0 0 0 22 0zm1 8.6a1 1 0 0 1-1 1h-5.6a1 1 0 0 1-1-1V2.9a1 1 0 0 1 1-1h5.7a1 1 0 0 1 1 1z" data-name="Path 152"/></g></g><g data-name="Group 172"><g data-name="Group 171"><path d="M8.6 13.5H3A2.9 2.9 0 0 0 0 16.4V22A2.9 2.9 0 0 0 2.9 25h5.7a2.9 2.9 0 0 0 3-2.9v-5.7a2.9 2.9 0 0 0-3-3zm1 8.6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-5.7a1 1 0 0 1 1-1h5.7a1 1 0 0 1 1 1z" data-name="Path 153"/></g></g><g data-name="Group 174"><g data-name="Group 173"><path d="M22 13.5h-5.6a3 3 0 0 0-3 3V22a3 3 0 0 0 3 2.9h5.7a3 3 0 0 0 2.9-3v-5.6a3 3 0 0 0-3-3zm1 8.6a1 1 0 0 1-1 1h-5.6a1 1 0 0 1-1-1v-5.7a1 1 0 0 1 1-1h5.7a1 1 0 0 1 1 1z" data-name="Path 154"/></g></g></svg>'
+            - var iconComments= '<svg class="nav-tabs__item-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path d="M12.5 0C5.6 0 0 4.9 0 11a10.5 10.5 0 0 0 4.7 8.5V25l5.5-3.3a14.3 14.3 0 0 0 2.3.2c6.9 0 12.5-5 12.5-11S19.4 0 12.5 0zm0 20.3a12.6 12.6 0 0 1-2.6-.3l-3.7 2.2v-3.6A9 9 0 0 1 1.6 11c0-5.1 4.9-9.3 10.9-9.3s11 4.2 11 9.3-5 9.4-11 9.4z"/></svg>'
+            - var iconInfo= '<svg class="nav-tabs__item-link-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><g data-name="Group 175"><path d="M12.5 0A12.5 12.5 0 1 0 25 12.5 12.5 12.5 0 0 0 12.5 0zm0 23.5a11 11 0 1 1 11-11 11 11 0 0 1-11 11z" data-name="Path 155"/><g data-name="Group 176" transform="translate(-.4)"><circle cx="1.3" cy="1.3" r="1.3" data-name="Ellipse 12" transform="translate(11.4 6.2)"/><path d="M12.7 10.9c-.6 0-1.1.3-1.1.8v6.5c0 .4.5.8 1 .8s1.2-.4 1.2-.8v-6.5c0-.5-.5-.8-1.1-.8z" data-name="Path 156"/></g></g></svg>'
+            // begin Tabs Nav
+            +b.UL.nav-tabs._restaurant.nav(id="restaurant-nav-tabs" role="tablist")
+              +e.LI.item._restaurant.nav-item 
+                +e.A.item-link._restaurant.nav-link.active(id="menu-tab" data-toggle="tab" href="#menu" role="tab" aria-controls="menu" aria-selected="true") 
+                  | !{iconMenu}
+                  +e.SPAN.item-link-text Меню
+              +e.LI.item._restaurant.nav-item 
+                +e.A.item-link._restaurant.nav-link(id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false") 
+                  | !{iconComments}
+                  +e.SPAN.item-link-text Отзывы
+                  +e.SPAN.item-link-reviews 2
+              +e.LI.item._restaurant.nav-item 
+                +e.A.item-link._restaurant.nav-link(id="information-tab" data-toggle="tab" href="#information" role="tab" aria-controls="information" aria-selected="false")
+                  | !{iconInfo}
+                  +e.SPAN.item-link-text Информация о ресторане    
+
+            // end Tabs Nav
+
+        // end Tabs Content
+        +b.tab-content(id="restaurant-content-tabs")
+
+          +e.pane.tab-pane.fade.show.active(id="menu" role="tabpanel" aria-labelledby="menu-tab")  
+            +e.short-row.row
+              +e.short-col.col-xl-3.col-lg-3.col-md-3.hidden-mobile_md
+                +e.FORM(action="#")
+                  +b.restaurant-filter-sidebar
+                    +b.H5.title-gray._parent_restaurant-filter-sidebar._border_b Категории
+                    +radio-box-custom({name: "category", value: "all", title: "Все блюда", checked: "true"})._full-width._font-w-l._parent_restaurant-filter-sidebar 
+                    +radio-box-custom({name: "category", value: "burgers", title: "Бургеры"})._full-width._font-w-l._parent_restaurant-filter-sidebar 
+                    +radio-box-custom({name: "category", value: "grill", title: "Гриль"})._full-width._font-w-l._parent_restaurant-filter-sidebar 
+                    +radio-box-custom({name: "category", value: "snacks", title: "Закуски и гарниры"})._full-width._font-w-l._parent_restaurant-filter-sidebar 
+                    +radio-box-custom({name: "category", value: "salads", title: "Салаты"})._full-width._font-w-l._parent_restaurant-filter-sidebar 
+                    +radio-box-custom({name: "category", value: "drinks", title: "Напитки"})._full-width._font-w-l._parent_restaurant-filter-sidebar 
+
+
+                    +b.H5.title-gray._parent_restaurant-filter-sidebar._border_b_t Подкатегории
+                    +e.UL.list
+                      +e.LI.list-item
+                        +check-box({name: "dietary", title: "Диетическое"})._text._display_flex._lg._font-w-l._parent_restaurant-filter-sidebar
+                      +e.LI.list-item
+                        +check-box({name: "porkFree", title: "Без свинины"})._text._display_flex._lg._font-w-l._parent_restaurant-filter-sidebar          
+                      +e.LI.list-item
+                        +check-box({name: "vegetarian", title: "Вегетарианское"})._text._display_flex._lg._font-w-l._parent_restaurant-filter-sidebar
+                      +e.LI.list-item
+                        +check-box({name: "notSharp", title: "Не острое"})._text._display_flex._lg._font-w-l._parent_restaurant-filter-sidebar
+                      +e.LI.list-item
+                        +check-box({name: "sharp", title: "Острое"})._text._display_flex._lg._font-w-l._parent_restaurant-filter-sidebar
+
+              +e.short-col.col-xl-9.col-lg-9.col-md-9
+                +e.tab-content-restaurant-col
+                  .filter-dropdown-mobile.display-f.justify-c-c.show-mobile_md.margin-b-md
+                    +btn("btn", "button", "Фильтр по блюдам")(data-toggle="modal" data-target="#filter-restaurant-modal")._theme_dark._lg._full-width
+                  // begin Restaurant-menu-section
+                  +b.restaurant-menu-section
+
+                    +e.H2.title Бургеры
+                    +e.menu-row.row
+                      +e.menu-col.col-xl-4.col-lg-6.col-md-6.col-sm-6
+                        +product-card({category: "Бургеры", title: "Неряшливый Джо", img: {src: "img/content/product-card-1.jpg", srcset: "img/content/product-card-1@2x.jpg", alt: "Неряшливый Джо"}, restaurant: {title: "BB&BURGERS", href: "#", src: "img/content/BB&BURGERS-logo.jpg", srcset: "img/content/BB&BURGERS-logo@2x.jpg", alt: "BB&BURGERS", stars: "3"}, price: "350", composition: "Зеленый микс, курица гриль, помидоры, coуc"})._parent_restaurant-menu-section._margin_b_md
+                      +e.menu-col.col-xl-4.col-lg-6.col-md-6.col-sm-6    
+                        +product-card({category: "Стейк фри", title: "Стейк фри", img: {src: "img/content/product-card-2.jpg", srcset: "img/content/product-card-2@2x.jpg", alt: "Стейк фри"}, restaurant: {title: "Каррифан", href: "#", src: "img/content/karrifan-logo.jpg", srcset: "img/content/karrifan-logo@2x.jpg", alt: "Каррифан", stars: "5"}, price: "4 800", composition: "Бальзамический уксус"})._parent_restaurant-menu-section._margin_b_md
+                      +e.menu-col.col-xl-4.col-lg-6.col-md-6.col-sm-6
+                        +product-card({category: "Закуски и гарниры", title: "Куриное филе в чесночной панир…", img: {src: "img/content/product-card-3.jpg", srcset: "img/content/product-card-3@2x.jpg", alt: "Куриное филе в чесночной панир…"}, restaurant: {title: "IL ПАТИО", href: "#", src: "img/content/ilPatio-logo.jpg", srcset: "img/content/ilPatio-logo@2x.jpg", alt: "IL ПАТИО", stars: "2"}, price: "22 480", composition: "Чеснок"})._parent_restaurant-menu-section._margin_b_md
+
+                    +e.H2.title Гриль          
+                    +e.menu-row.row
+                      +e.menu-col.col-xl-4.col-lg-6.col-md-6.col-sm-6
+                        +product-card({category: "Бургеры", title: "Двойной чизбургер с беконом", img: {src: "img/content/product-card-4.jpg", srcset: "img/content/product-card-4@2x.jpg", alt: "Двойной чизбургер с беконом"}, restaurant: {title: "SWISS YARD", href: "#", src: "img/content/SWISSYARD-logo.jpg", srcset: "img/content/SWISSYARD-logo@2x.jpg", alt: "SWISS YARD", stars: "1"}, price: "25", composition: "Травы с соусом терияки"})._parent_restaurant-menu-section._margin_b_md               
+                      +e.menu-col.col-xl-4.col-lg-6.col-md-6.col-sm-6    
+                        +product-card({category: "Стейк фри", title: "Стейк фри", img: {src: "img/content/product-card-2.jpg", srcset: "img/content/product-card-2@2x.jpg", alt: "Стейк фри"}, restaurant: {title: "Каррифан", href: "#", src: "img/content/karrifan-logo.jpg", srcset: "img/content/karrifan-logo@2x.jpg", alt: "Каррифан", stars: "5"}, price: "4 800", composition: "Бальзамический уксус", disabled: "disabled"})._parent_restaurant-menu-section._disabled._margin_b_md
+                      +e.menu-col.col-xl-4.col-lg-6.col-md-6.col-sm-6
+                        +product-card({category: "Бургеры", title: "Неряшливый Джо", img: {src: "img/content/product-card-1.jpg", srcset: "img/content/product-card-1@2x.jpg", alt: "Неряшливый Джо"}, restaurant: {title: "BB&BURGERS", href: "#", src: "img/content/BB&BURGERS-logo.jpg", srcset: "img/content/BB&BURGERS-logo@2x.jpg", alt: "BB&BURGERS", stars: "3"}, price: "350", composition: "Зеленый микс, курица гриль, помидоры, coуc"})._parent_restaurant-menu-section._margin_b_md
+                      +e.menu-col.col-xl-4.col-lg-6.col-md-6.col-sm-6
+                        +product-card({category: "Бургеры", title: "Неряшливый Джо", img: {src: "img/content/product-card-1.jpg", srcset: "img/content/product-card-1@2x.jpg", alt: "Неряшливый Джо"}, restaurant: {title: "BB&BURGERS", href: "#", src: "img/content/BB&BURGERS-logo.jpg", srcset: "img/content/BB&BURGERS-logo@2x.jpg", alt: "BB&BURGERS", stars: "3"}, price: "350", composition: "Зеленый микс, курица гриль, помидоры, coуc", disabled: "disabled"})._parent_restaurant-menu-section._disabled._margin_b_md
+                      +e.menu-col.col-xl-4.col-lg-6.col-md-6.col-sm-6    
+                        +product-card({category: "Стейк фри", title: "Стейк фри", img: {src: "img/content/product-card-2.jpg", srcset: "img/content/product-card-2@2x.jpg", alt: "Стейк фри"}, restaurant: {title: "Каррифан", href: "#", src: "img/content/karrifan-logo.jpg", srcset: "img/content/karrifan-logo@2x.jpg", alt: "Каррифан", stars: "5"}, price: "4 800", composition: "Бальзамический уксус"})._parent_restaurant-menu-section._margin_b_md
+                      +e.menu-col.col-xl-4.col-lg-6.col-md-6.col-sm-6
+                        +product-card({category: "Закуски и гарниры", title: "Куриное филе в чесночной панир…", img: {src: "img/content/product-card-3.jpg", srcset: "img/content/product-card-3@2x.jpg", alt: "Куриное филе в чесночной панир…"}, restaurant: {title: "IL ПАТИО", href: "#", src: "img/content/ilPatio-logo.jpg", srcset: "img/content/ilPatio-logo@2x.jpg", alt: "IL ПАТИО", stars: "2"}, price: "22 480", composition: "Чеснок"})._parent_restaurant-menu-section._margin_b_md
+
+                  // end Restaurant-menu-section
+
+          +e.pane.tab-pane.fade(id="reviews" role="tabpanel" aria-labelledby="reviews-tab") 
+            +e.short-row.row
+              +e.short-col.col-xl-3.col-lg-3.col-md-3               
+                // begin Reviews-vertical-box
+                +b.reviews-vertical-box._margin_b_md
+                  +e.H5.title Рейтинг ресторана
+                  +e.SPAN.number 3,75
+                  +e.data
+                    +stars-rating({stars: "3"})._lg
+                    +e.SPAN.total-rating 20 оценок
+                    +e.SPAN.total-reviews 2 отзыва
+                // end Reviews-vertical-box
+
+              +e.short-col.col-xl-9.col-lg-9.col-md-9
+                +e.tab-content-restaurant-col
+                  +reviews-horizontal-box({name: "Василиса", date: "2018-10-09", dateText: "09.10.2018", stars: "3", descr: "Всегда захожу в этот ресторан, вкусно готовят и хороший сервис! Ставлю крепкую 5! ", image: { src: "img/content/user-2.jpg", alt: "Отзыв Василиса"}})._parent_restaurant-content-tabs 
+                  +reviews-horizontal-box({name: "Василий", date: "2018-10-09", dateText: "09.10.2018", stars: "5", descr: "Заказываем эту пиццу в офис, привозят очень быстро и всегда горячую. Пицца брайтон бич и с лососем — это любовь. Рекомендую.", image: { src: "img/content/user-2.jpg", alt: "Отзыв Василий"}})._parent_restaurant-content-tabs 
+
+                  include blocks/write-comment-box
+
+          +e.pane.tab-pane.fade(id="information" role="tabpanel" aria-labelledby="information-tab") 
+            +e.short-row.row
+              +e.short-col.col-xl-3.col-lg-3.col-md-3
+                include  blocks/restaurant-info-vertical-box
+
+              +e.short-col.col-xl-9.col-lg-9.col-md-9
+                +b.about-restaurant
+
+                  H2 BB&BURGERS - ядрёные бургеры с шоколадом
+
+                  p Сложившаяся структура организации требуют от нас анализа дальнейших направлений развития. Значимость этих проблем настолько очевидна, что сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же укрепление и развитие структуры играет важную роль в формировании новых предложений. 
+
+                  p Сложившаяся структура организации требуют от нас анализа дальнейших направлений развития.
+
+                  H3 Наши шоколадные бургеры, теперь с перцем
+
+                  p Сложившаяся структура организации требуют от нас анализа дальнейших направлений развития. Значимость этих проблем настолько очевидна, что сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же укрепление и развитие структуры играет важную роль в формировании новых предложений. 
+
+                  p Сложившаяся структура организации требуют от нас анализа дальнейших направлений развития. Значимость этих проблем настолько очевидна, что сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Задача организации, в особенности же укрепление и развитие структуры играет важную роль в формировании новых предложений. 
+
+                +e.images-carousel.pos-relative(id="tab-content__images-carousel")
+                  +e.BUTTON.nav-btn._prev.swiper-button-prev(type="button")
+                  +e.BUTTON.nav-btn._next.swiper-button-next(type="button")
+                  include blocks/images-carousel
+
+        // end Tabs Content
+
+
+
+
+    include blocks/footer 
+
+block scripts 
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU") 
+  script(src="js/bundle.min.js") 

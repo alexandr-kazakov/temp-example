@@ -1,0 +1,26 @@
+
+// begin Cart Modal
++modal({size: "modal-xl"})(id="cart-modal").cart-modal.fade.modal_mobile-full
+  +b.modal-custom
+    +e.BUTTON.mobile-close-btn(type="button" data-dismiss="modal" aria-label="Close") Назад
+    +e.content
+      +e.header
+        +e.H3.title Корзина
+
+      +e.FORM(action="#")
+        +input-box({type: "text", name:"coupon" , placeholder:"Код купона", button: {type: "btn", data: "submit", text: "Применить", classes: "_theme_dark"} })._button._parent_cart-modal
+      +e.FORM(action="#")
+
+        +e.cart-content
+          +cart-item-box({title: "Стейк фри", quantity: "1", price: "480"})._margin_b_sm
+          +cart-item-box({title: "Двойной чизбургер с беконом", quantity: "1", price: "1 920", adds: "true"}, {addTitle: "Зелень", addPrice: "480"}, {addTitle: "Халапеньо", addPrice: "3 100"} , {addTitle: "Бальзамический уксус", addPrice: "8"})._margin_b_sm
+          +cart-item-box({title: "Рёбрышки чёрного быка в соусе BBQ с салатом коул-слоу", quantity: "2", price: "12 150", adds: "true"}, {addTitle: "Экстра рыбная котлета", addPrice: "1 300"})._margin_b_sm
+
+        +e.cart-nav
+          +e.row.row
+            +e.col.col-xl-8.col-lg-8.col-md-8
+              include ../blocks/cart-total-box
+            +e.col.col-xl-4.col-lg-4.col-md-4.display-f.justify-c-e
+              +btn("btn", "submit", "Оформить заказ")._lg._theme_base._parent_cart-modal
+
+// end Cart Modal

@@ -1,0 +1,27 @@
+mixin order-box(box) 
+  // begin Order-box
+  +b.order-box&attributes(attributes)
+
+    +e.top
+      +e.top-left
+        +e.UL.data
+          +e.LI.data-item Заказ №: #{box.number}
+          +e.LI.data-item Дата заказа: 
+            +e.TIME.date(datetime= box.date)= box.dateText 
+          +e.LI.data-item._address   
+            +e.SPAN.address-title Адрес доставки: 
+            +e.SPAN.address-text= box.address
+
+      +e.top-right
+        +e.SPAN.status(class= box.status === "Доставлен" ? "_success" : box.status === "Отменён" ? "_danger" : box.status === "Выполняется" ? "_warning": false)= box.status
+
+    +e.second
+      +e.second-left
+        +e.restaurant Ресторан:
+          +e.A.restaurant-link(href="#")
+            +e.IMG.restaurant-img(src= box.restaurant.src, alt= box.restaurant.alt)
+
+      +e.second-right
+        +e.BUTTON.toggler(type="button", data-toggle="collapse", data-target="#" + box.target aria-expanded="true", aria-controls= box.target, class= box.togglerClasses)
+
+  // end Order-box

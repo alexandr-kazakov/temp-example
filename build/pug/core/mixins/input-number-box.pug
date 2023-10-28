@@ -1,0 +1,7 @@
+mixin input-number-box(input)
+  // begin Input-number-box
+  +b.input-number-box&attributes(attributes)
+    +e.BUTTON.button._minus(type="button") -
+    +e.INPUT.input-text(type= input.type, name= input.name, value= input.value, class=(input.state ? input.state  : false), disabled= (input.state === "disabled"? input.state  : false))
+    +e.BUTTON.button._plus(type="button") +
+  // end Input-number-box

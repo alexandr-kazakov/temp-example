@@ -1,0 +1,15 @@
+mixin breadcrumbs(...items)  
+  - var counter = items.length
+
+  // begin Breadcrumbs
+
+  +b.UL.breadcrumbs&attributes(attributes)
+    each item in items
+      +e.LI.item
+        if counter === 1
+          +e.SPAN= item
+        else
+          +e.A.item-link(href="#")= item
+        - counter--
+
+  // end Breadcrumbs

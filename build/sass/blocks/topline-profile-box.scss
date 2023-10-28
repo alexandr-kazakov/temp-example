@@ -1,0 +1,130 @@
+// begin Topline-profile-box
+.topline-profile-box {
+  &__header {
+    background-color: $gray;
+    border-bottom: 1px solid #e2e2e2;
+    padding: 50px 20px;
+
+    @include media('<xl') {
+      padding: 30px 15px;
+    }
+
+    @include media('<lg') {
+      padding: 15px;
+    }
+
+    @include media('<md') {
+      padding: 15px 15px 5px 15px;
+    }
+  }
+
+  &__header-top {
+    align-items: flex-start;
+    display: flex;
+
+    @include media('<lg') {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    @include media('<md') {
+      align-items: flex-start;
+      border-bottom: 1px solid #e2e2e2;
+      flex-direction: row;
+      justify-content: center;
+      margin-bottom: 5px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__header-second {
+    @include media('<md') {
+      text-align: center;
+    }
+  }
+
+  &__user-image {
+    border-radius: 50%;
+    height: auto;
+    margin: 0 15px 0 0;
+    min-width: 80px;
+    width: 80px;
+
+    @include media('<xl') {
+      margin: 0 10px 0 0;
+      min-width: 60px;
+      width: 60px;
+    }
+
+    @include media('<lg') {
+      margin: 0 auto 10px auto;
+    }
+
+    @include media('<md') {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &__user-data {
+    @include reset-list;
+  }
+
+  &__user-data-item {
+    color: $black;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &_name {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      @include media('<xl') {
+        margin-bottom: 5px;
+      }
+    }
+
+    @include media('<xl') {
+      max-width: 170px;
+    }
+    @include media('<lg') {
+      text-align: center;
+    }
+    @include media('<md') {
+      text-align: left;
+    }
+  }
+
+  &__body {
+    background-color: $gray;
+    min-height: 500px;
+    padding-top: 15px;
+
+    @include media('<xl') {
+      min-height: 400px;
+    }
+
+    @include media('<lg') {
+      min-height: 300px;
+    }
+
+    @include media('<md') {
+      background-color: #fff;
+      min-height: 0;
+      padding: 0;
+    }
+  }
+
+  &__footer {
+    background-color: $gray;
+    padding: 20px;
+
+    @include media('<xl') {
+      padding: 15px;
+    }
+  }
+}
+// end Topline-profile-box

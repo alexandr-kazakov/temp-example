@@ -1,0 +1,5 @@
+mixin double-text-box(box)
+  if box.tag === "span"
+    +b.SPAN.double-text-box(data-background-text= box.text)&attributes(attributes)= box.text
+  if box.tag === "h2"
+    +b.H2.double-text-box(data-background-text= box.text)&attributes(attributes)= box.text

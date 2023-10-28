@@ -1,0 +1,76 @@
+// begin Address-box
+.address-box {
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.6;
+  padding: 8px 20px;
+  transition: $transitionBasic;
+
+  &:hover {
+    border-color: $primary;
+  }
+
+  @include media('<md') {
+    padding: 15px;
+  }
+
+  &__main {
+    align-items: center;
+    display: flex;
+    margin-right: 15px;
+    padding: 22px 0;
+  }
+
+  &__nav {
+    @include reset-list;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__nav-item {
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      .address-box__icon {
+        fill: $black-hover;
+      }
+    }
+
+    &:before {
+      content: '';
+      height: 30px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+    }
+  }
+
+  &__icon {
+    fill: #e1e1e2;
+    transition: $transitionBasic;
+  }
+
+  &_parent_profile-settings {
+    margin-bottom: 30px;
+    @include media('<sm') {
+      margin-bottom: 15px;
+    }
+  }
+}
+// end Address-box

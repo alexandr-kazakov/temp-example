@@ -1,0 +1,43 @@
+// begin Modal
+
+.modal_mobile-full {
+  @include media('<sm') {
+    padding: 0 !important;
+  }
+}
+
+.modal-content {
+  @include media('<sm') {
+    .modal_product-card-modal & {
+      border: none;
+    }
+  }
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.modal-xl {
+  max-width: 1110px;
+
+  @include media('<xl') {
+    max-width: 930px;
+  }
+  @include media('<lg') {
+    max-width: 720px;
+  }
+  @include media('<md') {
+    max-width: 540px;
+  }
+  @include media('<sm') {
+    height: 100vh;
+    max-width: none;
+    margin: 0;
+    width: 100%;
+    .modal & {
+    }
+  }
+}
+
+// end Modal

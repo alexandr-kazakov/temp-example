@@ -1,0 +1,80 @@
+//  FadeIn
+@mixin Fade {
+  animation: fadeEffect 0.3s;
+}
+
+@keyframes fadeEffect {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+//  Fade Out
+@mixin FadeOut {
+  animation: fadeOutEffect 0.3s;
+}
+
+@keyframes fadeOutEffect {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+//  blink
+@mixin blink {
+  animation: blink-animation 2s steps(5, start) infinite;
+  -webkit-animation: blink-animation 2s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+//  Rotate
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// Counter
+
+@keyframes counter {
+  33% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Blink color
+
+@keyframes blinkColor {
+  50% {
+    color: $primary;
+  }
+
+  100% {
+    color: inherit;
+  }
+}

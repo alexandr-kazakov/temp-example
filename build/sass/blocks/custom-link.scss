@@ -1,0 +1,37 @@
+// begin Custom-link
+.custom-link {
+  letter-spacing: 0.5px;
+  position: relative;
+  &:hover {
+    color: $primary-hover;
+    text-decoration: none;
+    transition: $transitionBasic;
+    &:before {
+      opacity: 1;
+    }
+  }
+  &:active {
+    text-decoration: none;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  &:before,
+  &:after {
+    bottom: -5px;
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+  &:before {
+    background-color: $primary-hover;
+    height: 2px;
+    opacity: 0;
+    transition: $transitionBasic;
+  }
+  &:after {
+    height: 7px;
+  }
+}
+// end Custom-link

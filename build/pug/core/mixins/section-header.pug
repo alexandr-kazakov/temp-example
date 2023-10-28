@@ -1,0 +1,13 @@
+mixin section-header(box)
+  +b.HEADER.section-header&attributes(attributes)
+    if box.tag === "h1"
+      +double-text-box({tag: "h1", text: box.title})(class= box.theme ? box.theme : false)
+
+    else if box.type === "number"
+      +title-number-center-box({left: "Найдено", right: "Ресторанов", number: "5"})
+
+      +e.SPAN.subtitle.text-align-c.display-block= box.subtitle
+
+    else
+      +double-text-box({tag: "h2", text: box.title})(class= box.theme ? box.theme : false)
+

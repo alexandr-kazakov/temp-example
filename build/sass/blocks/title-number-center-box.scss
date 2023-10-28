@@ -1,0 +1,50 @@
+// begin Title-number-center-box
+.title-number-center-box {
+  display: flex;
+  justify-content: center;
+
+  &__title {
+    align-items: center;
+    display: flex;
+    margin: 0 0 10px;
+    text-align: center;
+  }
+
+  &__text {
+    color: $black;
+    font-size: 3.8rem;
+
+    letter-spacing: 1.9px;
+    width: 40%;
+
+    &:nth-of-type(1) {
+      text-align: right;
+    }
+
+    @include media('<md') {
+      font-size: 3.4rem;
+    }
+
+    @include media('<sm') {
+      font-size: 3rem;
+    }
+  }
+
+  &__number {
+    box-sizing: content-box;
+    color: $primary;
+    font-size: 6.5rem;
+    padding: 0 15px;
+    @include media('<md') {
+      font-size: 5.5rem;
+      padding: 0 10px;
+    }
+
+    @include media('<sm') {
+      font-size: 4.5rem;
+      padding: 0 5px;
+    }
+  }
+}
+
+// end Title-number-center-box

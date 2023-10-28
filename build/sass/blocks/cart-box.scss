@@ -1,0 +1,325 @@
+// begin Cart box
+.cart-box {
+  position: relative;
+  z-index: 3;
+
+  &:before {
+    bottom: -15px;
+    content: '';
+    height: 15px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  @include media('<xl') {
+    &.cart-box_parent_header {
+      margin-right: 20px;
+    }
+  }
+
+  @include media('<lg') {
+    &.cart-box_parent_header {
+      margin-right: 15px;
+    }
+  }
+
+  @include media('<md') {
+    &.cart-box_parent_header {
+      display: none;
+    }
+  }
+
+  &__dropdown-toggle {
+    cursor: pointer;
+    display: flex;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 8px;
+
+    @include media('<lg') {
+      .cart-box_parent_header & {
+        margin-right: 2px;
+      }
+    }
+
+    .cart-box_parent_mobile-toolbar & {
+      justify-content: center;
+      padding-top: 4px;
+    }
+
+    .cart-box_theme_white & {
+      color: #fff;
+    }
+  }
+
+  &__right {
+    align-items: center;
+    display: flex;
+    position: relative;
+    padding-top: 5px;
+    width: 32px;
+
+    .cart-box_parent_mobile-toolbar & {
+      height: 43px;
+    }
+  }
+
+  &__title {
+    color: #bababa;
+    display: inline-block;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+
+    @include media('<xl') {
+      .cart-box_parent_header & {
+        font-size: 10px;
+        margin-bottom: 6px;
+      }
+    }
+
+    .cart-box_parent_mobile-toolbar & {
+      display: none;
+    }
+
+    .cart-box_theme_white & {
+      color: #fff;
+    }
+  }
+
+  &__value {
+    color: #1e262d;
+    font-size: 1.6rem;
+    letter-spacing: 0.9px;
+    line-height: 1;
+    text-align: right;
+
+    &.animate {
+      animation: blinkColor 0.7s forwards;
+    }
+
+    @include media('<lg') {
+      .cart-box_parent_header & {
+        font-size: 1.4rem;
+      }
+    }
+
+    .cart-box_theme_white & {
+      color: #fff;
+    }
+
+    .cart-box_parent_mobile-toolbar & {
+      font-size: 2rem;
+    }
+  }
+
+  &__value-number {
+    .cart-box_parent_mobile-toolbar & {
+      display: inline-block;
+      min-width: 73px;
+    }
+  }
+
+  &__currency {
+    font-size: 1.5rem;
+
+    @include media('<lg') {
+      .cart-box_parent_header & {
+        font-size: 1rem;
+      }
+    }
+
+    .cart-box_parent_mobile-toolbar & {
+      font-size: 2rem;
+    }
+  }
+
+  &__icon {
+    fill: #1e262d;
+
+    .cart-box_theme_white & {
+      fill: #fff;
+    }
+  }
+
+  &__quantity {
+    align-items: center;
+    background-color: $primary;
+    color: #fff;
+    display: flex;
+    font-size: 12px;
+    height: 20px;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 2px;
+    width: 20px;
+  }
+
+  &__quantity-number {
+    &.animate {
+      animation: counter 0.3s forwards;
+    }
+  }
+
+  &__dropdown {
+    background-color: #fff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    left: 0;
+    position: absolute;
+    top: calc(100% + 15px);
+    width: 318px;
+
+    @include media('<lg') {
+      left: -30px;
+    }
+  }
+
+  &__dropdown-content {
+    max-height: 280px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 16px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border: 5px solid rgba(0, 0, 0, 0);
+      background-clip: padding-box;
+      background-color: rgba(0, 0, 0, 0.15);
+      height: 6px;
+      -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05),
+        inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+    }
+    &::-webkit-scrollbar-thumb:vertical {
+      border-radius: 11px;
+      background-color: #b7b6b7;
+      height: 90px;
+      &:hover {
+        background-color: #979797;
+      }
+    }
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-button:start:decrement,
+    &::-webkit-scrollbar-button:end:increment {
+      height: 10px;
+    }
+  }
+
+  &__dropdown-content-empty {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 280px;
+    padding: 30px;
+  }
+
+  &__dropdown-content-empty-icon {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  &__dropdown-content-empty-text {
+    color: #b8b8b8;
+    display: block;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+    text-align: center;
+  }
+
+  &__dropdown-nav {
+    box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+
+  &__dropdown-nav-medium {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__dropdown-nav-title {
+    color: $titleText;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    margin-right: 15px;
+  }
+
+  &__dropdown-nav-value {
+    color: $titleText;
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+  }
+
+  &__dropdown-nav-value-fake {
+    color: #b1b1b1;
+    font-size: 1.4rem;
+    font-weight: normal;
+    letter-spacing: 0.2px;
+    margin-right: 15px;
+    position: relative;
+    &:before {
+      background-color: #b1b1b1;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+  }
+
+  &__dropdown-nav-currency {
+    font-size: 1.4rem;
+    letter-spacing: 0.3px;
+  }
+
+  &__dropdown-nav-discount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+  }
+
+  &__dropdown-nav-discount-title {
+    color: #aeaeae;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+  }
+
+  &__dropdown-nav-discount-value {
+    color: #aeaeae;
+    letter-spacing: 0.3px;
+  }
+
+  &.animate {
+    &:before {
+      animation: addToCart 1s cubic-bezier(0.42, 0, 1, 1) forwards;
+      background: #ee8161;
+      background: radial-gradient(transparent, rgba(238, 129, 97, 0.6));
+      border-radius: 50%;
+      content: '';
+      height: 200%;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 200%;
+    }
+  }
+
+  &_parent_header {
+    margin-right: 30px;
+  }
+}
+
+// end Cart box

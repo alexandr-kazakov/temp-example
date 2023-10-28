@@ -1,0 +1,66 @@
+// begin Toggle-dropdown
+.toggle-dropdown {
+  position: relative;
+
+  &__toggler {
+    align-items: center;
+    border-radius: 2px;
+    background-color: #fff;
+    border: 1px solid #ececec;
+    color: $black;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.43;
+    letter-spacing: 0.3px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 14px 28px 14px 18px;
+    position: relative;
+    text-align: left;
+    text-overflow: ellipsis;
+    transition: $transitionBasic;
+    width: 100%;
+
+    &:hover {
+      background-color: $gray;
+    }
+    &:focus {
+      outline: none;
+    }
+
+    .select-box_width_full & {
+      width: 100%;
+    }
+
+    .select-box_text-transform_u & {
+      text-transform: uppercase;
+    }
+
+    &:after {
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgMTAgNiI+CiAgICA8cGF0aCBmaWxsPSIjQUNBQ0FDIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjAxIDUuNTgxYS41NzMuNTczIDAgMCAxLS40MDctLjE2N0wuMjIyIDEuMDMyQS41NzQuNTc0IDAgMSAxIDEuMDMzLjIyTDUuMDEgNC4xOTYgOC45ODUuMjJhLjU3My41NzMgMCAxIDEgLjgxMi44MTJMNS40MTUgNS40MTRhLjU3Mi41NzIgMCAwIDEtLjQwNi4xNjd6Ii8+Cjwvc3ZnPgo=);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      content: '';
+      height: 8px;
+      position: absolute;
+      right: 14px;
+      top: calc(50% - 4px);
+      transition: all 0.3s;
+      width: 10px;
+    }
+
+    &.active {
+      &:after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &_parent_filter-dropdown {
+    width: 100%;
+  }
+}
+// end Toggle-dropdown

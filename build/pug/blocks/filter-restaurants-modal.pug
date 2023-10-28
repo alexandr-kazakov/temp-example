@@ -1,0 +1,37 @@
+// begin Filter-restaurants Modal
++modal({size: "modal-xl"})(id="filter-restaurants-modal")._product-card-modal.fade.modal_mobile-full
+  +b.modal-custom._filter-restaurants-modal
+    +e.BUTTON.mobile-close-btn(type="button" data-dismiss="modal" aria-label="Close") Назад
+    +e.FORM(action="#")
+      +e.content
+        +e.header
+          +e.H3.title Фильтр по ресторанам
+
+        +e.H4.section-title Тип кухни
+        +e.row.row.margin-b-xs
+          +e.col.col
+            +check-box({name: "kitchen-type-all", title: "Все"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "kitchen-type-Europe", title: "Европейская"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "kitchen-type-Caucasus", title: "Кавказская"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "kitchen-type-Japan", title: "Японская"})._text._margin_b_sm._display_flex._sm
+
+        +e.H4.section-title Минимальная стоимость заказа
+        +e.row.row.margin-b-xs
+          +e.col.col
+            +check-box({name: "min-price-all", title: "Все"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "min-price-before500", title: "До 500 руб"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "min-price-500to1000", title: "От 500 до 1000 руб"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "min-price-more1000", title: "От 1000 руб"})._text._margin_b_sm._display_flex._sm
+
+        +e.H4.section-title Среднее время доставки
+        +e.row.row.margin-b-xs
+          +e.col.col
+            +check-box({name: "time-all", title: "Не имеет значения"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "time-30min", title: "30 мин"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "time-45min", title: "45 мин"})._text._margin_b_sm._display_flex._sm
+            +check-box({name: "time-1hour", title: "1 час"})._text._margin_b_sm._display_flex._sm
+
+        +e.footer
+          +btn("btn", "submit", "Применить фильтр")._theme_dark._filter-restaurants-modal
+
+// end Filter-restaurants Modal

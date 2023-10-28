@@ -1,0 +1,58 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Контакты'
+  - var pageDescription = 'Описание'
+  - var pageKeywords = 'Ключевые слова'
+  - var userState= 'login'
+
+block content
+  +b.page-wrapper
+    +header({state:'logout', theme: ""})(id="header")
+
+    +b.section._breadcrumbs
+      +e.container.container
+        +breadcrumbs("Главная", "Контакты")._parent_contacts-page 
+
+
+    +b.section._contacts-descr
+      +e.container.container
+        +section-header({title: "Как с нами связаться?", theme: "_sm"}) 
+
+        +e._contacts-descr-content
+          p Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации позиций. 
+          p Товарищи! дальнейшее развитие различных форм деятельности играет важную роль в формировании соответствующий условий активизации. 
+
+    +b.section._contacts-options
+      +e.container.container
+        +e.row.row
+          +e.col.col-xl-6.col-lg-6.col-md-12
+            +contact-box({title: "Отдел по работе с клиентами"})._margin_b_md
+              +e.UL.items
+                +e.LI.item Напишите нам: 
+                  +e.A(href="mailto:help@eatsfast.ru") help@eatsfast.ru
+                +e.LI.item Или позвоните: 
+                  +e.A(href="tel:+79166863674") +7 (916) 686-36-74
+
+          +e.col.col-xl-6.col-lg-6.col-md-12
+            +contact-box({title: "По вопросам сотрудничества"})._margin_b_md
+              +e.UL.items
+                +e.LI.item Напишите нам: 
+                  +e.A(href="mailto:shinskiy@eatsfast.ru") shinskiy@eatsfast.ru
+                +e.LI.item Офис-менеджер: 
+                  +e.A(href="tel:+79999992810") +7 (999) 999-28-10
+
+        +contact-box({title: "Юридический адрес"})._margin_b_md
+          +e.UL.items
+            +e.LI.item Электронная почта: 
+              +e.A(href="mailto:shinskiy@eatsfast.ru") shinskiy@eatsfast.ru
+            +e.LI.item ИП Шинский Ян Павлович
+            +e.LI.item 
+              span ОГРНИП 318505300052910, 
+              span ИНН 773131530667
+            +e.LI.item 143421, Россия, 
+              span Московская область, 
+              span дер. Глухово, 
+              span ул. Рублевское предместье 4к1
+
+    include blocks/footer 

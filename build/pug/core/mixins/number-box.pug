@@ -1,0 +1,9 @@
+mixin number-box(box)
+  // begin Number-box
+  +b.number-box&attributes(attributes)
+    +e.number-box-left
+      +double-text-box({tag: "span", text: box.number})._number
+    +e.number-box-right
+      +e.H3.title= box.title
+      +e.P.descr= box.descr
+  // end Number-box

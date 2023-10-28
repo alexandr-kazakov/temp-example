@@ -1,0 +1,63 @@
+// begin Ul
+.ul {
+  @include reset-list;
+
+  li {
+    padding-left: 18px;
+    position: relative;
+
+    &:before {
+      background-color: $primary;
+      border-radius: 50%;
+      content: '';
+      height: 6px;
+      left: 0;
+      position: absolute;
+      top: 6px;
+      width: 6px;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &_sm {
+    li {
+      font-size: 12px;
+      padding-left: 15px;
+
+      &:before {
+        height: 4px;
+        width: 4px;
+      }
+    }
+  }
+
+  &_order {
+    padding: 15px 0 15px 15px;
+
+    @include media('<lg') {
+      padding: 15px 0 15px 0;
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        padding-left: 5px;
+        white-space: nowrap;
+      }
+
+      @include media('<lg') {
+        font-size: 10px;
+      }
+
+      @include media('<md') {
+        padding-left: 10px;
+      }
+    }
+  }
+}
+// end Ul

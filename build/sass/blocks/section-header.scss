@@ -1,0 +1,35 @@
+.section-header {
+  &_margin_b_lg {
+    margin-bottom: 80px;
+    @include media('<lg') {
+      margin-bottom: 40px;
+    }
+    @include media('<sm') {
+      margin-bottom: 30px;
+    }
+  }
+
+  &_margin_b_md {
+    margin-bottom: 50px;
+    @include media('<lg') {
+      margin-bottom: 40px;
+    }
+    @include media('<sm') {
+      margin-bottom: 30px;
+    }
+  }
+
+  &_margin_b_sm {
+    margin-bottom: 40px;
+  }
+
+  &_parent_welcome {
+    bottom: 13.7vh;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    @include media('<md') {
+      display: none;
+    }
+  }
+}

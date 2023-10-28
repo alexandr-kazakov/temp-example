@@ -1,0 +1,29 @@
+.swiper-button-next,
+.swiper-button-prev {
+  background-color: #fff;
+  background-size: 12px 18px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.24), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  border: none;
+  height: 44px;
+  margin-top: 0;
+  opacity: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  z-index: 2;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+}
+.swiper-button-next {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjA5MiAxNi4wNjEiPgogICAgPGRlZnM+CiAgICAgICAgPHN0eWxlPgogICAgICAgICAgICAuY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojY2JjYmNiO3N0cm9rZS13aWR0aDoxLjVweDtmaWxsLXJ1bGU6ZXZlbm9kZH0KICAgICAgICA8L3N0eWxlPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlJpZ2h0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtLjQ2OSAtLjQ3KSI+CiAgICAgICAgPGcgaWQ9IlVJLUVsZW1lbnRzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxIDEpIj4KICAgICAgICAgICAgPGcgaWQ9IlJpZ2h0LUNvcHkiPgogICAgICAgICAgICAgICAgPGcgaWQ9Ikljb24tXy00OHB4LV8tQ2hldnJvbi1fLURvd24tXy1MYXJnZS1fLUJsYWNrIiBkYXRhLW5hbWU9Ikljb24tLy00OHB4LS8tQ2hldnJvbi0vLURvd24tLy1MYXJnZS0vLUJsYWNrIiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgNy41IDcuNSkiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGlkPSJQYWdlLTEiIGQ9Ik0wIDBsNy41IDcuNUwxNSAwIiBjbGFzcz0iY2xzLTEiLz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==');
+  background-position: 54% center;
+  right: -15px;
+}
+.swiper-button-prev {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5LjA5MSAxNi4wNjEiPgogICAgPGRlZnM+CiAgICAgICAgPHN0eWxlPgogICAgICAgICAgICAuY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojY2JjYmNiO3N0cm9rZS13aWR0aDoxLjVweDtmaWxsLXJ1bGU6ZXZlbm9kZH0KICAgICAgICA8L3N0eWxlPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IkxlZnQiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA0Ljc4IDguMjY1KSI+CiAgICAgICAgPGcgaWQ9IlVJLUVsZW1lbnRzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxIDEpIj4KICAgICAgICAgICAgPGcgaWQ9IlJpZ2h0LUNvcHkiPgogICAgICAgICAgICAgICAgPGcgaWQ9Ikljb24tXy00OHB4LV8tQ2hldnJvbi1fLURvd24tXy1MYXJnZS1fLUJsYWNrIiBkYXRhLW5hbWU9Ikljb24tLy00OHB4LS8tQ2hldnJvbi0vLURvd24tLy1MYXJnZS0vLUJsYWNrIiB0cmFuc2Zvcm09InJvdGF0ZSgtOTAgNy41IDcuNSkiPgogICAgICAgICAgICAgICAgICAgIDxwYXRoIGlkPSJQYWdlLTEiIGQ9Ik0wIDBsNy41IDcuNUwxNSAwIiBjbGFzcz0iY2xzLTEiLz4KICAgICAgICAgICAgICAgIDwvZz4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==');
+  background-position: 46% center;
+  left: -15px;
+}

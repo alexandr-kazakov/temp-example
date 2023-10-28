@@ -1,0 +1,32 @@
++b.FOOTER.footer(class= footerClasses? footerClasses : false)
+  // begin Footer Top
+  +e.top
+    +e.container.container
+      +e.row.row
+        +e.col.col-xl-8.col-lg-8.col-md-8.order-xl-last.order-lg-last.order-md-last
+          +e.row.row
+            +e.col.col-4.col-xl-6.col-lg-6.col-md-6.col-sm-6
+              +logo-box({theme: "normal"})._parent_footer
+            +e.col.col-8.col-xl-6.col-lg-6.col-md-6.col-sm-6.text-align-r
+              +call-box._margin_b_lg._parent_footer
+              +social-block._justify-c_e._parent_footer
+
+        +e.col.col-xl-4.col-lg-4.col-md-4.order-xl-first.order-lg-first.order-md-first
+          +e.UL.top-nav
+            +e.LI.top-nav-item
+              +e.A.top-nav-item-link(href="#") Пользовательское соглашение
+            +e.LI.top-nav-item
+              +e.A.top-nav-item-link(href="#") Согласие на обработку персональных данных
+            +e.LI.top-nav-item
+              +e.A.top-nav-item-link(href="#") Правила оказания услуг
+            +e.LI.top-nav-item
+              +e.A.top-nav-item-link(href="#") Политика конфиденциальности
+  // end Footer Top
+
+
+  // begin Footer Bottom
+  +e.bottom
+    +e.container.container
+      +e.copyright
+        +e.SPAN  &copy; 2018 by Eat's Fast. Все права защищены
+  // end Footer Bottom

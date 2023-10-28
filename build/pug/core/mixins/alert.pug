@@ -1,0 +1,9 @@
+mixin alert(box)
+  // begin Alert
+  +b.alert(role="alert")&attributes(attributes)
+    if box.state === "close"
+      +e.BUTTON.close-btn(type="button")
+    if block
+      block
+  // end Alert
+

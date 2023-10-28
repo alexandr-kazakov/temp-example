@@ -1,0 +1,46 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'О нас'
+  - var pageDescription = 'Описание'
+  - var pageKeywords = 'Ключевые слова'
+  - var userState= 'login'
+
+block content
+  +b.page-wrapper
+    +header({state:'logout', theme: ""})(id="header")
+
+    +b.section._breadcrumbs
+      +e.container.container
+        +breadcrumbs("Главная", "О нас")._parent_about-us
+
+
+    +b.section._about-us-descr
+      +e.container.container
+        +section-header({title: "Кто мы?", theme: "_sm"}) 
+
+        +e._about-us-content
+          p Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же сложившаяся структура организации требуют от нас анализа систем массового участия. Товарищи! дальнейшее развитие различных форм деятельности играет важную роль в формировании соответствующий условий активизации. Таким образом консультация с широким активом позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач.
+          p Товарищи! дальнейшее развитие различных форм деятельности играет важную роль в формировании соответствующий условий активизации. Таким образом консультация с широким активом позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач.
+
+    +b.section._about-us-delivery-area
+      +e.container.container
+        +section-header({title: "Куда мы доставляем?", theme: "_sm"})
+      .hidden-mobile_md 
+        script(async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A95f1054e72fbb1b786977d18391c00d90f0725931d58cd9091b5f21b60f9a7e3&amp;width=100%25&amp;height=580&amp;lang=ru_RU&amp;scroll=true")
+      .show-mobile_md 
+        script(async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A3258e3db4ec5c800368e9f200c577000c5709304a0c3809e3ea6c7a83ff7be6d&amp;width=100%25&amp;height=300&amp;lang=ru_RU&amp;scroll=true")
+
+    +b.section._about-us-reviews(id="about-us-reviews")
+      +e.container.container
+        +section-header({title: "О нас говорят", theme: "_sm"})
+        - var writeCommentBoxType = "_no-stars_flex-row"
+        - var writeCommentBoxClasses = "_no-stars_flex-row _parent_about-us-reviews"
+
+        include blocks/write-comment-box
+        +reviews-horizontal-box({name: "Василиса", date: "2018-10-09", dateText: "09.10.2018", stars: "noStars", descr: "Очень довольна доставкой. Очень вежливый курьер, а блюда были еще горячие!", image: { src: "img/content/user-2.jpg", alt: "Отзыв Василиса"}})._parent_about-us-reviews 
+        +reviews-horizontal-box({name: "Василий", date: "2018-10-09", dateText: "09.10.2018", stars: "noStars", descr: "Задача организации, в особенности же рамки и место обучения кадров требуют от нас анализа соответствующий условий активизации. Задача организации, в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет оценить значение позиций, занимаемых участниками в отношении поставленных задач.", image: { src: "img/content/user-2.jpg", alt: "Отзыв Василий"}})._parent_about-us-reviews 
+
+
+
+    include blocks/footer 

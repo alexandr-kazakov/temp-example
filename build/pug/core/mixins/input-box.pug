@@ -1,0 +1,20 @@
+mixin input-box(input, helpText)
+  - var iconInputClick= '<svg class="input-box__success-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10"><path fill="#189D3F" fill-rule="evenodd" d="M13.3.2a.7.7 0 0 0-1 0l-8 8.1-3.1-3a.7.7 0 0 0-1 .9l3.6 3.6a.7.7 0 0 0 1 0l8.5-8.6a.7.7 0 0 0 0-1z"/></svg>'  
+  // begin Input-Box
+  +b.input-box&attributes(attributes)
+    +e.LABEL.label
+      if input.icon
+        | !{input.icon}  
+      +e.INPUT.input-text(type= input.type, name= input.name, placeholder= input.placeholder, class=(input.state ? input.state  : false), disabled= (input.state === "disabled"? input.state  : false),  pattern= (input.pattern ? input.pattern : false), required= (input.required ? "required"  : false), data-mask-type= (input.dataMaskType ? input.dataMaskType : false) )
+      +e.SPAN.error-message= (input.state  === "error" ?  "Ошибка. Обязательное поле." : '')
+      | !{iconInputClick}
+
+    if input.button
+      +btn(input.button.type, input.button.data, input.button.text)(class= input.button.classes)._parent_input-box
+
+    if helpText
+      +e.SPAN.help-text= helpText
+
+    if input.dropdown === "address"
+      +dropdown-menu({status: "search"}, {title: "Мосфильмовская улица, 11к4, подъезд 1", subtitle: "Село Дмитровское, городской округ Красногорск, Московская область, проезд Колотушкина"}, {title: "ул Красноармейская, д 1/5, проезд 5", subtitle: "страна Мира, город Сказочный, проезд Колотушкина, после поворота 200 метров прямо и поворот налево"}, {title: "Центральная улица", subtitle: "Алексеевская соединительная ветвь, станция Москва-Каланчёвская"}, {title: "Ильинское шоссе, 4В", subtitle: "Богородский городской округ, рабочий посёлок имени Воровского, садовое товарищество Вечерняя Москва"}).hidden
+  // end Input-Box

@@ -1,0 +1,45 @@
+// begin Logo-box
+.logo-box {
+  display: block;
+  width: 113px;
+
+  &__image {
+    width: 100%;
+  }
+
+  &_parent_header {
+    margin-right: 30px;
+  }
+
+  &_parent_footer {
+    margin: 0 auto;
+  }
+
+  @include media('<xl') {
+    &.logo-box_parent_header {
+      width: 81px;
+    }
+  }
+
+  @include media('<lg') {
+    &.logo-box_parent_header {
+      margin-right: 10px;
+      width: 70px;
+    }
+  }
+
+  @include media('<md') {
+    &.logo-box_parent_header {
+      height: 30px;
+      margin-right: 0;
+      overflow: hidden;
+      width: 80px;
+    }
+
+    &.logo-box_parent_footer {
+      width: 81px;
+      margin: 0;
+    }
+  }
+}
+// end Logo-box

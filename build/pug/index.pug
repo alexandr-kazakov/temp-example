@@ -1,0 +1,44 @@
+extends core/layout.pug
+
+block vars
+  - var pageTitle = 'Все страницы'
+  - var pageDescription = 'Описание'
+  - var pageKeywords = 'Ключевые слова'
+
+
+block content
+  +b.container
+    +b.H1 EatsFast
+    +b.UL
+      +b.LI(style="margin-bottom: 20px")
+        +b.A(href="home.html" target="_blank") Главная страница
+        +b.BR
+        +b.A(href="http://bit.ly/2PZGdPk" target="_blank") Скриншот, разрешение 3820px+
+
+      +b.LI(style="margin-bottom: 20px")
+        +b.A(href="restaurants.html" target="_blank") Выбор ресторана
+        +b.BR
+
+      +b.LI(style="margin-bottom: 20px")
+        +b.A(href="restaurant.html" target="_blank") Выбор блюд
+        +b.BR
+
+      +b.LI(style="margin-bottom: 20px")
+        +b.A(href="checkout-login.html" target="_blank") Оформление заказа - Логин
+        +b.BR
+        +b.A(href="checkout-logout.html" target="_blank") Оформление заказа - Гость        
+
+      +b.LI(style="margin-bottom: 20px")
+        +b.A(href="profile.html" target="_blank") Личный кабинет
+        +b.BR
+
+      +b.LI(style="margin-bottom: 20px")
+        +b.A(href="about-us.html" target="_blank") О нас
+        +b.BR
+
+      +b.LI(style="margin-bottom: 20px")
+        +b.A(href="contact.html" target="_blank") Контакты
+        +b.BR
+
+      +b.LI(style="margin-bottom: 20px")
+        +b.A(href="ui-kit.html" target="_blank") UI-kit

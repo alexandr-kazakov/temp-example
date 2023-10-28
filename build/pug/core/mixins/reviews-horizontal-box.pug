@@ -1,0 +1,14 @@
+mixin reviews-horizontal-box(box)
+  // begin Reviews-horizontal-box
+  +b.reviews-horizontal-box&attributes(attributes)
+    +e.header
+      +e.IMG.image(src= box.image.src, alt= box.image.alt)
+      +e.header-content
+        +e.header-content-top
+          +e.H5.name= box.name
+          +e.TIME.date(datetime= box.date)= box.dateText
+
+        if box.stars !== "noStars"
+          +stars-rating({stars: box.stars})._lg
+    +e.P.descr= box.descr
+  // end Reviews-horizontal-box

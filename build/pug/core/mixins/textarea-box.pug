@@ -1,0 +1,10 @@
+mixin textarea-box(input)
+  // begin Textarea-Box
+  +b.textarea-box&attributes(attributes)
+    +e.TEXTAREA.input(type= input.type, name= input.name, placeholder= input.placeholder, class=(input.state ? input.state  : false), disabled= (input.state === "disabled"? input.state  : false), required= input.required ? "required"  : false)
+    +e.SPAN.error-message= (input.state  === "error" ?  "Ошибка. Обязательное поле." : '')
+
+    if block
+      block 
+
+  // end Textarea-Box

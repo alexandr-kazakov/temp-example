@@ -1,0 +1,56 @@
+// begin Product-card Modal
++modal({size: "modal-xl"})(id="product-card-modal")._product-card-modal.fade.modal_mobile-full
+  // begin Product-card-large
+  +e.FORM(action="#")
+    +b.product-card-large
+      +e.BUTTON.mobile-close-btn(type="button" data-dismiss="modal" aria-label="Close") Назад
+      +e.content
+        +e.left
+          +e.IMG.image(src="img/content/product-card-large-1.jpg", srcset="img/content/product-card-large-1@2x.jpg", alt="Ребрышки черного быка в соусе BBQ c салатом коул-слоу, в бальзамическом уксусе")
+          +e.IMG.image._mobile(src="img/content/product-card-large-mobile-1.jpg", srcset="img/content/product-card-large-mobile-1@2x.jpg 2x", alt="Ребрышки черного быка в соусе BBQ c салатом коул-слоу, в бальзамическом уксусе")
+
+        +e.right
+
+          +e.header
+            +e.header-top
+              +e.H3.title Ребрышки черного быка в соусе BBQ c салатом коул-слоу в бальзамическом уксусе
+              +e.SPAN.price 11 800 
+                +e.SPAN.currency руб
+            +e.header-bottom
+              +e.SPAN.weight  270 г
+
+          +e.descr 
+            +e.P Фирменный бургер с говяжьей котлетой, луковым конфитюром, барбекю, трюфельным соусом, в бальзамическом уксусе.
+
+          +e.row.row.margin-b-xs-2
+            +e.col.col-xl-6.col-xl-6.col-lg-6.col-md-6
+              +restaurant-box({href: "#", title: "BB&BURGERS", img: {src: "img/content/BB&BURGERS-logo.jpg", srcset: "img/content/BB&BURGERS-logo@2x.jpg", alt: "BB&BURGERS"}, stars: "3"})._product-card-large
+            +e.col.col-xl-6.col-xl-6.col-lg-6.col-md-6
+              +select-box({name: "garnish", selected: "Без гарнира"}, {value: "garnish-no", text: "Без гарнира", active: "true"}, {value: "garnish-2", text: "Рис"}, {value: "garnish-3", text: "Тушённые баклажаны"}, {value: "garnish-4", text: "Плов"}, {value: "garnish-5", text: "Овощи на гриле"})
+
+          +e.H4.title-section Добавки
+          +e.row.row.margin-b-xs
+            +e.col.col-xl-6.col-xl-6.col-lg-6.col-md-6
+              +check-box({name: "item-1", title: "Помидор свежий", price: "+20₽"})._text._margin_b_sm._display_flex._sm
+              +check-box({name: "item-2", title: "Огурец свежий", price: "+1 200₽"})._text._margin_b_sm._display_flex._sm
+              +check-box({name: "item-3", title: "Бальзамический уксус", price: "+8₽"})._text._margin_b_sm._display_flex._sm
+              +check-box({name: "item-4", title: "Микс халапеньо и огурца", price: "+105₽"})._text._margin_b_sm._display_flex._sm
+            +e.col.col-xl-6.col-xl-6.col-lg-6.col-md-6
+              +check-box({name: "item-5", title: "Микс зелени", price: "+33₽"})._text._margin_b_sm._display_flex._sm
+              +check-box({name: "item-6", title: "Бальзамический уксус", price: "+1₽"})._text._margin_b_sm._display_flex._sm
+              +check-box({name: "item-7", title: "Коул-слоу", price: "+9 350₽"})._text._margin_b_sm._display_flex._sm
+              +check-box({name: "item-8", title: "Соус BBQ", price: "+481₽"})._text._margin_b_sm._display_flex._sm
+
+          +e.H4.title-section Количество
+          +input-number-box({type: "text", name:"quantity" , value: "1"})._product-card-large
+
+          +e.footer
+            +e.H4.total Итого:
+              +e.SPAN.price 11 800 
+                +e.SPAN.currency руб
+            +btn("btn", "submit", "Добавить в корзину")._theme_base._product-card-large
+
+
+  // end Product-card-large
+
+// end Product-card Modal

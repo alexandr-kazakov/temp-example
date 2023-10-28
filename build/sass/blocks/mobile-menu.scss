@@ -1,0 +1,42 @@
+// begin Mobile-menu
+.mobile-menu {
+  background-color: $gray;
+  bottom: 0;
+  display: none;
+  position: fixed;
+  right: 0;
+  opacity: 1;
+  overflow-y: auto;
+  transform: translateX(400px);
+  transition: $transitionBasic;
+  top: 0;
+  width: 320px;
+  z-index: 20;
+
+  @include media('<md') {
+    display: block;
+  }
+
+  &.open {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+
+  &__header {
+    align-items: center;
+    border-bottom: 1px solid #b8b8b8;
+    display: flex;
+    height: 56px;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__footer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 10px;
+  }
+}
+// end Mobile-menu

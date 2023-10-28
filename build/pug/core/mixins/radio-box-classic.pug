@@ -1,0 +1,8 @@
+mixin radio-box-classic(box)
+  // begin Radio-box-classic
+  +b.LABEL.radio-box-classic&attributes(attributes)
+    +e.INPUT.input(name= box.name, value=box.value, type="radio", checked = box.checked ? "checked" : false)
+    +e.SPAN.checkmark
+    +e.SPAN.title
+      +e.SPAN.text= box.title 
+  // end Radio-box-classic

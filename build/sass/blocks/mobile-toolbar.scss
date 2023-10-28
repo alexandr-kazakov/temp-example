@@ -1,0 +1,26 @@
+// begin Mobile-toolbar
+.mobile-toolbar {
+  border-top: 1px solid #f4f4f4;
+  background-color: #fff;
+  bottom: 0;
+  display: none;
+  height: 64px;
+  left: 0;
+  position: fixed;
+  padding: 5px 15px;
+  width: 100%;
+  z-index: 10;
+
+  @include media('<md') {
+    display: block;
+  }
+
+  &__items {
+    @include reset-list;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+  }
+}
+// end Mobile-toolbar

@@ -1,0 +1,8 @@
+mixin order-box-footer(box)
+  // begin Order-box-footer
+  +b.order-box-footer&attributes(attributes)
+    +e.SPAN.price Итого: 
+      +e.SPAN.price-value #{box.price} руб
+    +btn("btn", "button", "Повторить")._theme_base._parent_order-box-footer
+
+  // end Order-box-footer

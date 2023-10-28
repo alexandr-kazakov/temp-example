@@ -1,0 +1,13 @@
+mixin btn(type, data, text, icon)
+  if type === "link"
+    +b.A.btn(href= data)&attributes(attributes)
+      if icon
+        | !{icon}
+      +e.SPAN.text= text
+  else if type === "btn"
+    +b.BUTTON.btn(type= data)&attributes(attributes)
+      if icon
+        | !{icon}       
+      +e.SPAN.text= text
+
+
